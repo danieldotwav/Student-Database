@@ -1,0 +1,12 @@
+LastName, FirstName, Major, GPA,
+Roads, Abeny, Music, 2.87
+Smith, John, Computer Science, 3.71
+Johnson, Emily, Psychology, 3.52
+Davis, Michael, Biology, 2.95
+Anderson, Sarah, Economics, 3.84
+Brown, David, English Literature, 3.16
+Wilson, Jessica, Mathematics, 3.42
+Martinez, Daniel, Electrical Engineering, 3.90
+Taylor, Olivia, History, 3.79
+Thomas, Andrew, Physics, 2.87
+Jackson, Sophia, Chemistry, 3.61
