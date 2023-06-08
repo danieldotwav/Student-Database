@@ -1,47 +1,47 @@
 --------------------------------------------
 Alphabetical by Last Name
 
-Name:    Anderson, Sarah
+Name:    Anderson,Sarah
 Major:   Economics
 GPA:     3.84
 
-Name:    Brown, David
+Name:    Brown,David
 Major:   English Literature
 GPA:     3.16
 
-Name:    Davis, Michael
+Name:    Davis,Michael
 Major:   Biology
 GPA:     2.95
 
-Name:    Jackson, Sophia
+Name:    Jackson,Sophia
 Major:   Chemistry
 GPA:     3.61
 
-Name:    Johnson, Emily
+Name:    Johnson,Emily
 Major:   Psychology
 GPA:     3.52
 
-Name:    Martinez, Daniel
+Name:    Martinez,Daniel
 Major:   Electrical Engineering
 GPA:     3.90
 
-Name:    Roads, Abeny
+Name:    Roads,Abeny
 Major:   Music
 GPA:     2.87
 
-Name:    Smith, John
+Name:    Smith,John
 Major:   Computer Science
 GPA:     3.71
 
-Name:    Taylor, Olivia
+Name:    Taylor,Olivia
 Major:   History
 GPA:     3.79
 
-Name:    Thomas, Andrew
+Name:    Thomas,Andrew
 Major:   Physics
 GPA:     2.87
 
-Name:    Wilson, Jessica
+Name:    Wilson,Jessica
 Major:   Mathematics
 GPA:     3.42
 

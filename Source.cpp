@@ -5,6 +5,8 @@
 #include <sstream>
 #include <string>
 #include <cstring>
+//#include <cctype>
+//#include <algorithm>
 #include <vector>
 #include "Student.h"
 using namespace std;
@@ -18,7 +20,7 @@ int SubMenuSelection();
 void StudentLookup(int& index, array<string, NUMRECORDS> lastNameCOPY, array<string, NUMRECORDS> firstNameCOPY);
 void SortBy(string method, array<string, NUMRECORDS>& lastNameCOPY, array<string, NUMRECORDS>& firstNameCOPY, array<string, NUMRECORDS>& majorCOPY, array<double, NUMRECORDS>& GPA_COPY);
 void PrintStudentRecords(int index, array<string, NUMRECORDS>& lastNameCOPY, array<string, NUMRECORDS>& firstNameCOPY, array<string, NUMRECORDS>& majorCOPY, array<double, NUMRECORDS>& GPA_COPY);
-void PrintAllRecords(string method, array<string, NUMRECORDS>lastNameCOPY, array<string, NUMRECORDS> firstNameCOPY, array<string, NUMRECORDS> majorCOPY, array<double, NUMRECORDS> GPA_COPY);
+void PrintMasterRecords(string method, array<string, NUMRECORDS>lastNameCOPY, array<string, NUMRECORDS> firstNameCOPY, array<string, NUMRECORDS> majorCOPY, array<double, NUMRECORDS> GPA_COPY);
 
 int main() {
     // Variable Declaration
@@ -51,6 +53,7 @@ int main() {
     getline(InFile, line);
     line = "";
     int count{ 0 };
+    string whitespace; // Used to skip the whitespace before major name
 
     while (!InFile.eof() && count < NUMRECORDS) {
         // Read the next line of the document into a string variable
@@ -60,9 +63,15 @@ int main() {
 
         // Populate the arrays
         getline(input, lastName[count], ',');
+        getline(input, whitespace, ' '); // Removes space before firstName
         getline(input, firstName[count], ',');
+        getline(input, whitespace, ' '); // Removes space before major
         getline(input, major[count], ',');
         input >> GPA[count];
+
+        // The method below can be used to remove all whitespaces in a string. Not very userful in our case, but it does exist. 
+        //firstName[count].erase(remove_if(firstName[count].begin(), firstName[count].end(), isspace));
+        //major[count].erase(remove_if(major[count].begin(), major[count].end(), isspace));
 
         // Create a copy of the arrays for later use
         lastNameCOPY[count] = lastName[count];
@@ -89,15 +98,15 @@ int main() {
             switch (subMenuChoice) {
             case 1: // Alphabetical by Last Name
                 SortBy("Last Name", lastNameCOPY, firstNameCOPY, majorCOPY, GPA_COPY);
-                PrintAllRecords("Last Name", lastNameCOPY, firstNameCOPY, majorCOPY, GPA_COPY);
+                PrintMasterRecords("Last Name", lastNameCOPY, firstNameCOPY, majorCOPY, GPA_COPY);
                 break;
             case 2: // Alphabetical by Major
                 SortBy("Major", lastNameCOPY, firstNameCOPY, majorCOPY, GPA_COPY);
-                PrintAllRecords("Major", lastNameCOPY, firstNameCOPY, majorCOPY, GPA_COPY);
+                PrintMasterRecords("Major", lastNameCOPY, firstNameCOPY, majorCOPY, GPA_COPY);
                 break;
             case 3: // GPA (Highest to Lowest)
                 SortBy("GPA", lastNameCOPY, firstNameCOPY, majorCOPY, GPA_COPY);
-                PrintAllRecords("GPA", lastNameCOPY, firstNameCOPY, majorCOPY, GPA_COPY);
+                PrintMasterRecords("GPA", lastNameCOPY, firstNameCOPY, majorCOPY, GPA_COPY);
                 break;
             }
             break;
@@ -177,38 +186,9 @@ void StudentLookup(int& index, array<string, NUMRECORDS> lastNameCOPY, array<str
         }
     }
     // If the first and last name don't match, set index to sentinel value of -999
-    if (!lastNameMatch && !firstNameMatch) {
+    if (!lastNameMatch || !firstNameMatch) {
         index = -999;
     }
-}
-
-void PrintStudentRecords(int index, array<string, NUMRECORDS>& lastNameCOPY, array<string, NUMRECORDS>& firstNameCOPY, array<string, NUMRECORDS>& majorCOPY, array<double, NUMRECORDS>& GPA_COPY) {
-    ofstream OutFile("Master_Records.txt");
-
-    // Output Formatting
-    OutFile << fixed << showpoint << setprecision(2);
-
-    if (index == -999) {
-        cout << "***No Student Record Found***\n\n";
-    }
-    else {
-        OutFile << "--------------------------------------------\n";
-
-        OutFile << "Name:    " << lastNameCOPY[index] << ","
-            << firstNameCOPY[index] << endl;
-        OutFile << "Major:  " << setw(w) << majorCOPY[index] << endl;
-        OutFile << "GPA:    " << setw(w) << GPA_COPY[index] << endl << endl;
-
-        OutFile << "--------------------------------------------\n\n";
-
-        // Let the user know the data printed successfully
-        cout << "//////////////////////////////////////////////////\n";
-        cout << "Data Exported Successfully to Master_Records.txt\n";
-        cout << "/////////////////////////////////////////\n\n";
-    }
-
-    // Close files
-    OutFile.close();
 }
 
 void SortBy(string method, array<string, NUMRECORDS>& lastNameCOPY, array<string, NUMRECORDS>& firstNameCOPY, array<string, NUMRECORDS>& majorCOPY, array<double, NUMRECORDS>& GPA_COPY) {
@@ -240,7 +220,7 @@ void SortBy(string method, array<string, NUMRECORDS>& lastNameCOPY, array<string
         }
     }
 
-    // Sort By Major
+    // Sort By Major (also Bubble)
     if (method == "Major") {
         for (int i{ 0 }; i < NUMRECORDS; i++) {
             for (int j{ 0 }; j < NUMRECORDS - 1; j++) {
@@ -267,15 +247,15 @@ void SortBy(string method, array<string, NUMRECORDS>& lastNameCOPY, array<string
         }
     }
 
-    // Sort By GPA
+    // Sort By GPA (you guessed it, also Bubble)
     if (method == "GPA") {
         for (int i{ 0 }; i < NUMRECORDS; i++) {
             for (int j{ 0 }; j < NUMRECORDS - 1; j++) {
-                if (GPA_COPY[j] > GPA_COPY[j + 1]) {
+                if (GPA_COPY[j] < GPA_COPY[j + 1]) {
                     // Swap the elements in GPA array
-                    double x = GPA_COPY[j];
+                    double temp = GPA_COPY[j];
                     GPA_COPY[j] = GPA_COPY[j + 1];
-                    majorCOPY[j + 1] = x;
+                    GPA_COPY[j + 1] = temp;
                     // Swap the elements in the other arrays as well
                     // First Name
                     string t = firstNameCOPY[j];
@@ -296,7 +276,39 @@ void SortBy(string method, array<string, NUMRECORDS>& lastNameCOPY, array<string
 
 }
 
-void PrintAllRecords(string method, array<string, NUMRECORDS> lastNameCOPY, array<string, NUMRECORDS> firstNameCOPY, array<string, NUMRECORDS> majorCOPY, array<double, NUMRECORDS> GPA_COPY) {
+void PrintStudentRecords(int index, array<string, NUMRECORDS>& lastNameCOPY, array<string, NUMRECORDS>& firstNameCOPY, array<string, NUMRECORDS>& majorCOPY, array<double, NUMRECORDS>& GPA_COPY) {
+    if (index == -999) {
+        cout << "***No Student Record Found***\n\n";
+    }
+    else {
+        string studentDocName = lastNameCOPY[index] + "_";
+        studentDocName += firstNameCOPY[index] + "_Records.txt";
+        ofstream OutFile(studentDocName);
+
+        // Output Formatting
+        OutFile << fixed << showpoint << setprecision(2);
+
+        OutFile << "--------------------------------------------\n";
+
+        OutFile << "Name:    " << lastNameCOPY[index] << ","
+            << firstNameCOPY[index] << endl;
+        OutFile << "Major:   " << setw(w) << majorCOPY[index] << endl;
+        OutFile << "GPA:    " << setw(w) << GPA_COPY[index] << endl << endl; //The whitespace was apparently stored in the double variable somehow
+
+        OutFile << "--------------------------------------------\n\n";
+
+        // Let the user know the data printed successfully
+        cout << "//////////////////////////////////////////////////\n";
+        cout << "Data Exported Successfully to " << studentDocName << "\n";
+        cout << "/////////////////////////////////////////\n\n";
+
+        // Close files
+        OutFile.close();
+    }
+
+}
+
+void PrintMasterRecords(string method, array<string, NUMRECORDS> lastNameCOPY, array<string, NUMRECORDS> firstNameCOPY, array<string, NUMRECORDS> majorCOPY, array<double, NUMRECORDS> GPA_COPY) {
     ofstream OutFile("Master_Records.txt");
 
     // Output Formatting
@@ -315,7 +327,7 @@ void PrintAllRecords(string method, array<string, NUMRECORDS> lastNameCOPY, arra
     for (int i{ 0 }; i < NUMRECORDS; i++) {
         OutFile << "Name:    " << lastNameCOPY[i] << ","
             << firstNameCOPY[i] << endl;
-        OutFile << "Major:  " << setw(w) << majorCOPY[i] << endl;
+        OutFile << "Major:   " << setw(w) << majorCOPY[i] << endl;
         OutFile << "GPA:    " << setw(w) << GPA_COPY[i] << endl << endl;
     }
 
