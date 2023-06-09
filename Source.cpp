@@ -5,11 +5,58 @@
 #include <sstream>
 #include <string>
 #include <cstring>
-//#include <cctype>
-//#include <algorithm>
 #include <vector>
+#include <cstdlib>
+#include <filesystem>
 #include "Student.h"
 using namespace std;
+
+//TODO:
+// 1. Allow user to enter specified file destination
+
+
+// Notes and Documentation
+/*
+6/8/2023: I attempted to save the file to a specified location by concatenating the file name to include the specified file path along with the document name (ex. C:\Desktop\FileName)
+          However, it was more efficient to use Windows API to get the correct file path.
+*/
+
+#ifdef _WIN32
+#include <shlobj.h>
+#endif
+
+string GetSpecifiedFolderPath(const GUID& folderID) {
+    string specifiedPath;
+
+#ifdef _WIN32
+    PWSTR path;
+    if (SUCCEEDED(SHGetKnownFolderPath(folderID, 0, nullptr, &path))) {
+        wchar_t* wPath = path;
+        size_t convertedChars = 0;
+        size_t bufferSize = wcslen(wPath) + 1;
+        char pathBuffer[MAX_PATH];
+        wcstombs_s(&convertedChars, pathBuffer, bufferSize, wPath, _TRUNCATE);
+        specifiedPath = pathBuffer;
+        CoTaskMemFree(path);
+    }
+#else
+    const char* homeDir = std::getenv("HOME");
+    if (homeDir != nullptr) {
+        switch (folderID) {
+            case FOLDERID_Desktop:
+                specifiedPath = string(homeDir) + "\\Desktop\\";
+                break;
+            case FOLDERID_Downloads:
+                specifiedPath = string(homeDir) + "\\Downloads\\";
+                break;
+            default:
+                break;
+        }
+    }
+#endif
+
+    return specifiedPath;
+}
 
 const int NUMRECORDS = 11;
 const int w = 5; // setw width
@@ -19,6 +66,8 @@ int MenuSelection();
 int SubMenuSelection();
 void StudentLookup(int& index, array<string, NUMRECORDS> lastNameCOPY, array<string, NUMRECORDS> firstNameCOPY);
 void SortBy(string method, array<string, NUMRECORDS>& lastNameCOPY, array<string, NUMRECORDS>& firstNameCOPY, array<string, NUMRECORDS>& majorCOPY, array<double, NUMRECORDS>& GPA_COPY);
+void SetFileDestination(string& filePath);
+string GetUserDefinedFilePath();
 void PrintStudentRecords(int index, array<string, NUMRECORDS>& lastNameCOPY, array<string, NUMRECORDS>& firstNameCOPY, array<string, NUMRECORDS>& majorCOPY, array<double, NUMRECORDS>& GPA_COPY);
 void PrintMasterRecords(string method, array<string, NUMRECORDS>lastNameCOPY, array<string, NUMRECORDS> firstNameCOPY, array<string, NUMRECORDS> majorCOPY, array<double, NUMRECORDS> GPA_COPY);
 
@@ -276,14 +325,90 @@ void SortBy(string method, array<string, NUMRECORDS>& lastNameCOPY, array<string
 
 }
 
+void SetFileDestination(string& filePath) {
+    int selection;
+    const GUID folderIDDesktop = FOLDERID_Desktop;
+    const GUID folderIDDownloads = FOLDERID_Downloads;
+    const GUID folderIDDocuments = FOLDERID_Documents;
+
+    do {
+        cout << "--File Path Selection--\n"
+            << "Select One of the Following Menu Options\n";
+        cout << "----------------------------------------\n";
+        cout << "1. Print to 'Desktop'\n";
+        cout << "2. Print to 'Downloads'\n";
+        cout << "3. Print to 'Documents'\n";
+        cout << "4. Type in your own file path\n\n";
+        cout << "Selection: ";
+        cin >> selection;
+        cout << endl;
+    } while (selection != 1 && selection != 2 && selection != 3 && selection != 4);
+
+    switch (selection) {
+        case 1:
+            filePath = GetSpecifiedFolderPath(folderIDDesktop);
+            break;
+        case 2:
+            filePath = GetSpecifiedFolderPath(folderIDDownloads);
+            break;
+        case 3:
+            filePath = GetSpecifiedFolderPath(folderIDDocuments);
+            break;
+        case 4:
+            filePath = GetUserDefinedFilePath();
+            break;
+        default:
+            cout << "ERROR: Invalid File Path Selection\n";
+            exit(1);
+    }
+}
+
+string GetUserDefinedFilePath() {
+    string filePath;
+
+    cout << "Enter the complete file path in the form:\n";
+    cout << "C:\\Users\\username\\FileDestination\\FileName.txt\n";
+    cout << "File Path = ";
+    cin >> filePath;
+    filePath += "\\FileName.txt";
+    cout << endl << endl;
+
+    // Fix the file path
+    for (int i{ 0 }; filePath[i] != '\0'; i++) {
+        if (filePath[i] == '\\') {
+            filePath[i] = '/';
+        }
+    }
+    
+    ofstream outFile(filePath);
+    if (outFile.fail()) {
+        cout << "ERROR: The destination '" << filePath << "' is invalid\n\n";
+        return "";
+    }
+    else {
+        return filePath;
+    }
+}
+
 void PrintStudentRecords(int index, array<string, NUMRECORDS>& lastNameCOPY, array<string, NUMRECORDS>& firstNameCOPY, array<string, NUMRECORDS>& majorCOPY, array<double, NUMRECORDS>& GPA_COPY) {
     if (index == -999) {
         cout << "***No Student Record Found***\n\n";
     }
     else {
-        string studentDocName = lastNameCOPY[index] + "_";
+        // Determine the filepath
+        string filePath;
+        SetFileDestination(filePath);
+
+        // Update Document Name
+        string studentDocName = filePath + "\\";
+        studentDocName += lastNameCOPY[index];
+        studentDocName += "_";
         studentDocName += firstNameCOPY[index] + "_Records.txt";
-        ofstream OutFile(studentDocName);
+
+        // TEST
+        cout << "Selected File Destination: ";
+        cout << studentDocName << endl << endl;
+        ofstream OutFile(studentDocName.c_str());
 
         // Output Formatting
         OutFile << fixed << showpoint << setprecision(2);
@@ -309,7 +434,20 @@ void PrintStudentRecords(int index, array<string, NUMRECORDS>& lastNameCOPY, arr
 }
 
 void PrintMasterRecords(string method, array<string, NUMRECORDS> lastNameCOPY, array<string, NUMRECORDS> firstNameCOPY, array<string, NUMRECORDS> majorCOPY, array<double, NUMRECORDS> GPA_COPY) {
-    ofstream OutFile("Master_Records.txt");
+
+    // Determine the filepath
+    string filePath;
+    SetFileDestination(filePath);
+
+    // Update Document Name
+    string DocumentName = filePath + "\\Master_Records.txt";
+    
+    // TEST
+    cout << "Selected file path: ";
+    cout << DocumentName << endl << endl;
+    // Note: When constructing the ofstream object, we pass DocumentName.c_str() as the argument, which converts the string to a c-style string
+    //ofstream OutFile(DocumentName.c_str());
+    ofstream OutFile(DocumentName);
 
     // Output Formatting
     OutFile << fixed << showpoint << setprecision(2);
