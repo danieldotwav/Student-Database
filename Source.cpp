@@ -7,18 +7,22 @@
 #include <cstring>
 #include <vector>
 #include <cstdlib>
-#include <filesystem>
 #include "Student.h"
 using namespace std;
 
 //TODO:
-// 1. Allow user to enter specified file destination
+// 1. Allow user to enter specified file destination (FIXED)
+// 2. The documents print to the correct location, but they are empty files (FIXED)
+// 3. Error handling:
+//      a. The program should not loop infinitely when the user enters invalid characters
+
 
 
 // Notes and Documentation
 /*
 6/8/2023: I attempted to save the file to a specified location by concatenating the file name to include the specified file path along with the document name (ex. C:\Desktop\FileName)
           However, it was more efficient to use Windows API to get the correct file path.
+6/9/2023: The program now allows the user to select the destination of the data file.
 */
 
 #ifdef _WIN32
@@ -66,8 +70,8 @@ int MenuSelection();
 int SubMenuSelection();
 void StudentLookup(int& index, array<string, NUMRECORDS> lastNameCOPY, array<string, NUMRECORDS> firstNameCOPY);
 void SortBy(string method, array<string, NUMRECORDS>& lastNameCOPY, array<string, NUMRECORDS>& firstNameCOPY, array<string, NUMRECORDS>& majorCOPY, array<double, NUMRECORDS>& GPA_COPY);
-void SetFileDestination(string& filePath);
-string GetUserDefinedFilePath();
+int SetFileDestination(string& filePath, ofstream&);
+string GetUserDefinedFilePath(ofstream&);
 void PrintStudentRecords(int index, array<string, NUMRECORDS>& lastNameCOPY, array<string, NUMRECORDS>& firstNameCOPY, array<string, NUMRECORDS>& majorCOPY, array<double, NUMRECORDS>& GPA_COPY);
 void PrintMasterRecords(string method, array<string, NUMRECORDS>lastNameCOPY, array<string, NUMRECORDS> firstNameCOPY, array<string, NUMRECORDS> majorCOPY, array<double, NUMRECORDS> GPA_COPY);
 
@@ -93,8 +97,8 @@ int main() {
 
     // Check to make sure the files open properly
     if (!InFile) {
-        cout << "Unable to open " << fileName << endl;
-        cout << "Terminating Program\n";
+        std::cout << "Unable to open " << fileName << endl;
+        std::cout << "Terminating Program\n";
         exit(1);
     }
 
@@ -160,7 +164,7 @@ int main() {
             }
             break;
         case 3: // Exit
-            cout << "Closing Menu...\n\n";
+            std::cout << "Closing Menu...\n\n";
             break;
         }
     }
@@ -169,8 +173,8 @@ int main() {
     InFile.close();
 
     // Exit Prompt
-    cout << "Terminating Program...\n";
-    cout << "*sad computer noises*" << endl;
+    std::cout << "Terminating Program...\n";
+    std::cout << "*sad computer noises*" << endl;
 }
 // Global Function Definitions
 
@@ -178,14 +182,14 @@ int MenuSelection() {
     int selection{ 0 };
 
     do {
-        cout << "Please Select One of the Following Menu Options\n";
-        cout << "------------------------------------------------\n";
-        cout << "1. Find Individual Student Records\n";
-        cout << "2. Print Entire Student Registry\n";
-        cout << "3. Exit\n\n";
-        cout << "Selection: ";
-        cin >> selection;
-        cout << endl;
+        std::cout << "Please Select One of the Following Menu Options\n";
+        std::cout << "------------------------------------------------\n";
+        std::cout << "1. Find Individual Student Records\n";
+        std::cout << "2. Print Entire Student Registry\n";
+        std::cout << "3. Exit\n\n";
+        std::cout << "Selection: ";
+        std::cin >> selection;
+        std::cout << endl;
     } while (selection != 1 && selection != 2 && selection != 3);
 
     return selection;
@@ -195,15 +199,15 @@ int SubMenuSelection() {
     int selection{ 0 };
 
     do {
-        cout << "--Print Method--\n"
+        std::cout << "--Print Method--\n"
             << "Select One of the Following Menu Options\n";
-        cout << "----------------------------------------\n";
-        cout << "1. Alphabetically by Last Name\n";
-        cout << "2. Alphabetically by Major\n";
-        cout << "3. GPA (Highest to Lowest)\n\n";
-        cout << "Selection: ";
-        cin >> selection;
-        cout << endl;
+        std::cout << "----------------------------------------\n";
+        std::cout << "1. Alphabetically by Last Name\n";
+        std::cout << "2. Alphabetically by Major\n";
+        std::cout << "3. GPA (Highest to Lowest)\n\n";
+        std::cout << "Selection: ";
+        std::cin >> selection;
+        std::cout << endl;
     } while (selection != 1 && selection != 2 && selection != 3);
 
     return selection;
@@ -214,8 +218,8 @@ void StudentLookup(int& index, array<string, NUMRECORDS> lastNameCOPY, array<str
     bool lastNameMatch{ false };
     bool firstNameMatch{ false };
 
-    cout << "Enter Student's Last Name: ";
-    cin >> lname;
+    std::cout << "Enter Student's Last Name: ";
+    std::cin >> lname;
     // Loop through last name array to find match
     for (int i{ 0 }; i < NUMRECORDS; i++) {
         if (lname.compare(lastNameCOPY[i]) == 0) {
@@ -226,9 +230,9 @@ void StudentLookup(int& index, array<string, NUMRECORDS> lastNameCOPY, array<str
     }
     // If the last name is in the record, check for first name
     if (lastNameMatch) {
-        cout << "Enter Student's First Name: ";
-        cin >> fname;
-        cout << endl;
+        std::cout << "Enter Student's First Name: ";
+        std::cin >> fname;
+        std::cout << endl;
 
         if (fname.compare(firstNameCOPY[index]) == 0) {
             firstNameMatch = true;
@@ -325,53 +329,53 @@ void SortBy(string method, array<string, NUMRECORDS>& lastNameCOPY, array<string
 
 }
 
-void SetFileDestination(string& filePath) {
+int SetFileDestination(string& filePath, ofstream& stream) {
     int selection;
     const GUID folderIDDesktop = FOLDERID_Desktop;
     const GUID folderIDDownloads = FOLDERID_Downloads;
     const GUID folderIDDocuments = FOLDERID_Documents;
 
     do {
-        cout << "--File Path Selection--\n"
+        std::cout << "--File Path Selection--\n"
             << "Select One of the Following Menu Options\n";
-        cout << "----------------------------------------\n";
-        cout << "1. Print to 'Desktop'\n";
-        cout << "2. Print to 'Downloads'\n";
-        cout << "3. Print to 'Documents'\n";
-        cout << "4. Type in your own file path\n\n";
-        cout << "Selection: ";
-        cin >> selection;
-        cout << endl;
+        std::cout << "----------------------------------------\n";
+        std::cout << "1. Print to 'Desktop'\n";
+        std::cout << "2. Print to 'Downloads'\n";
+        std::cout << "3. Print to 'Documents'\n";
+        std::cout << "4. Type in your own file path\n\n";
+        std::cout << "Selection: ";
+        std::cin >> selection;
+        std::cout << endl;
     } while (selection != 1 && selection != 2 && selection != 3 && selection != 4);
 
     switch (selection) {
         case 1:
             filePath = GetSpecifiedFolderPath(folderIDDesktop);
-            break;
+            return 0;
         case 2:
             filePath = GetSpecifiedFolderPath(folderIDDownloads);
-            break;
+            return 0;
         case 3:
             filePath = GetSpecifiedFolderPath(folderIDDocuments);
-            break;
+            return 0;
         case 4:
-            filePath = GetUserDefinedFilePath();
-            break;
+            filePath = GetUserDefinedFilePath(stream);
+            return 1;
         default:
-            cout << "ERROR: Invalid File Path Selection\n";
+            std::cout << "ERROR: Invalid File Path Selection\n";
             exit(1);
     }
 }
 
-string GetUserDefinedFilePath() {
+string GetUserDefinedFilePath(ofstream& stream) {
+
     string filePath;
 
-    cout << "Enter the complete file path in the form:\n";
-    cout << "C:\\Users\\username\\FileDestination\\FileName.txt\n";
-    cout << "File Path = ";
-    cin >> filePath;
-    filePath += "\\FileName.txt";
-    cout << endl << endl;
+    std::cout << "Enter the complete file path in the form:\n";
+    std::cout << "C:\\Users\\username\\FileDestination\\FileName.txt\n";
+    std::cout << "File Path = ";
+    std::cin >> filePath;
+    std::cout << endl << endl;
 
     // Fix the file path
     for (int i{ 0 }; filePath[i] != '\0'; i++) {
@@ -380,9 +384,9 @@ string GetUserDefinedFilePath() {
         }
     }
     
-    ofstream outFile(filePath);
-    if (outFile.fail()) {
-        cout << "ERROR: The destination '" << filePath << "' is invalid\n\n";
+    stream = ofstream(filePath);
+    if (stream.fail()) {
+        std::cout << "ERROR: The Destination '" << filePath << "' is Invalid\n\n";
         return "";
     }
     else {
@@ -391,14 +395,39 @@ string GetUserDefinedFilePath() {
 }
 
 void PrintStudentRecords(int index, array<string, NUMRECORDS>& lastNameCOPY, array<string, NUMRECORDS>& firstNameCOPY, array<string, NUMRECORDS>& majorCOPY, array<double, NUMRECORDS>& GPA_COPY) {
+    ofstream OutFile;
+    string DocumentName;
+
     if (index == -999) {
-        cout << "***No Student Record Found***\n\n";
+        std::cout << "***No Student Record Found***\n\n";
     }
     else {
         // Determine the filepath
         string filePath;
-        SetFileDestination(filePath);
+        if ((SetFileDestination(filePath, OutFile)) == 1) {
+            if (filePath == "") {
+                // If the user enters an invalid path, send the file to their Documents folder
+                const GUID folderIDDocuments = FOLDERID_Documents;
+                filePath = GetSpecifiedFolderPath(folderIDDocuments);
+                DocumentName = filePath + "\\Master_Records.txt";
 
+                std::cout << "File will be exported to Documents folder\n";
+                OutFile.open(DocumentName);
+            }
+        }
+        else {
+            // Update Document Name
+            filePath += "\\";
+            filePath += lastNameCOPY[index];
+            filePath += "_";
+            filePath += firstNameCOPY[index] + "_Records.txt";
+
+            // TEST
+            std::cout << "Selected File Destination: ";
+            std::cout << filePath << endl << endl;
+            OutFile = ofstream(filePath);
+        }
+        
         // Update Document Name
         string studentDocName = filePath + "\\";
         studentDocName += lastNameCOPY[index];
@@ -406,8 +435,8 @@ void PrintStudentRecords(int index, array<string, NUMRECORDS>& lastNameCOPY, arr
         studentDocName += firstNameCOPY[index] + "_Records.txt";
 
         // TEST
-        cout << "Selected File Destination: ";
-        cout << studentDocName << endl << endl;
+        std::cout << "Selected File Destination: ";
+        std::cout << filePath << endl << endl;
         ofstream OutFile(studentDocName.c_str());
 
         // Output Formatting
@@ -423,9 +452,9 @@ void PrintStudentRecords(int index, array<string, NUMRECORDS>& lastNameCOPY, arr
         OutFile << "--------------------------------------------\n\n";
 
         // Let the user know the data printed successfully
-        cout << "//////////////////////////////////////////////////\n";
-        cout << "Data Exported Successfully to " << studentDocName << "\n";
-        cout << "/////////////////////////////////////////\n\n";
+        std::cout << "//////////////////////////////////////////////////\n";
+        std::cout << "Data Exported Successfully to " << studentDocName << "\n";
+        std::cout << "/////////////////////////////////////////\n\n";
 
         // Close files
         OutFile.close();
@@ -434,20 +463,33 @@ void PrintStudentRecords(int index, array<string, NUMRECORDS>& lastNameCOPY, arr
 }
 
 void PrintMasterRecords(string method, array<string, NUMRECORDS> lastNameCOPY, array<string, NUMRECORDS> firstNameCOPY, array<string, NUMRECORDS> majorCOPY, array<double, NUMRECORDS> GPA_COPY) {
+    ofstream OutFile;
+    string DocumentName;
 
     // Determine the filepath
     string filePath;
-    SetFileDestination(filePath);
+    if ((SetFileDestination(filePath, OutFile)) == 1) {
+        if (filePath == "") {
+            // If the user enters an invalid path, send the file to their Documents folder
+            const GUID folderIDDocuments = FOLDERID_Documents;
+            filePath = GetSpecifiedFolderPath(folderIDDocuments);
+            DocumentName = filePath + "\\Master_Records.txt";
 
-    // Update Document Name
-    string DocumentName = filePath + "\\Master_Records.txt";
-    
-    // TEST
-    cout << "Selected file path: ";
-    cout << DocumentName << endl << endl;
-    // Note: When constructing the ofstream object, we pass DocumentName.c_str() as the argument, which converts the string to a c-style string
-    //ofstream OutFile(DocumentName.c_str());
-    ofstream OutFile(DocumentName);
+            std::cout << "File will be exported to Documents folder\n";
+            OutFile.open(filePath);
+        }
+    }
+    else {
+        // Update Document Name
+        DocumentName = filePath + "\\Master_Records.txt";
+
+        // TEST
+        std::cout << "Selected file path: ";
+        std::cout << filePath << endl << endl;
+        // Note: When constructing the ofstream object, we pass DocumentName.c_str() as the argument, which converts the string to a c-style string
+        //ofstream OutFile(DocumentName.c_str());
+        OutFile.open(DocumentName);
+    }
 
     // Output Formatting
     OutFile << fixed << showpoint << setprecision(2);
@@ -472,9 +514,9 @@ void PrintMasterRecords(string method, array<string, NUMRECORDS> lastNameCOPY, a
     OutFile << "--------------------------------------------\n\n";
 
     // Let the user know the data printed successfully
-    cout << "//////////////////////////////////////////////////\n";
-    cout << "Data Exported Successfully to Master_Records.txt\n";
-    cout << "/////////////////////////////////////////\n\n";
+    std::cout << "//////////////////////////////////////////////////\n";
+    std::cout << "Data Exported Successfully to Master_Records.txt\n";
+    std::cout << "/////////////////////////////////////////\n\n";
 
     // Close Files
     OutFile.close();
