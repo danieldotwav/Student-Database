@@ -37,6 +37,16 @@ using namespace std;
            The program will no longer enter an infinite loop when the user enters invalid characters when prompted for input.
 6/10/2023: Removed the ability for the user to input a specific file destination. In order to implement this feature, you need to first check that the user-entered destination is valid, and if it is not then either send the user back to the menu or generate the file in a known user location.
            I replaced the bubble sort mechanism with a merge sort algorithm that recursively divides the array into smaller subarrays until the base case is reached (when "low" becomes greater than or equal to "high")
+           Note: Arrays are not good for storing and processing large amounts of data, as they are allocated on the stack which is much more limited in size than data that is allocated on the heap
+6/11/2023: All array containers have been changed to vectors for scalability. Stack overflow is no longer an issue for processing records with thousands of lines.
+           All functions now accomodate vectors, and the sorting algorithm has been redesigned take in four parameters instead of 5. The first parameter is the vector whose contents are being sorted alphabetically (or chronologically in the case of GPA) and the other three parameters are the 
+           ...vectors whose index orders change in tandem with the sorted veector of interest.
+
+
+
+
+
+
 */
 
 #ifdef _WIN32
@@ -83,12 +93,13 @@ const int w = 5; // setw width
 // Function Prototypes
 int MenuSelection();
 int SubMenuSelection();
-void SortBy(string method, array<string, NUMRECORDS>& lastNameCOPY, array<string, NUMRECORDS>& firstNameCOPY, array<string, NUMRECORDS>& majorCOPY, array<string, NUMRECORDS>& GPA_COPY);
-void StudentLookup(int& index, array<string, NUMRECORDS> lastNameCOPY, array<string, NUMRECORDS> firstNameCOPY);
+void SortBy(string method, vector<string>& lastNameCOPY, vector<string>& firstNameCOPY, vector<string>& majorCOPY, vector<string>& GPA_COPY);
+void StudentLookup(int& index, vector<string> lastNameCOPY, vector<string> firstNameCOPY);
 void SetFileDestination(string& filePath);
-void PrintStudentRecords(int index, array<string, NUMRECORDS>& lastNameCOPY, array<string, NUMRECORDS>& firstNameCOPY, array<string, NUMRECORDS>& majorCOPY, array<string, NUMRECORDS>& GPA_COPY);
-void PrintMasterRecords(string method, array<string, NUMRECORDS>lastNameCOPY, array<string, NUMRECORDS> firstNameCOPY, array<string, NUMRECORDS> majorCOPY, array<string, NUMRECORDS> GPA_COPY);
+void PrintStudentRecords(int index, vector<string>& lastNameCOPY, vector<string>& firstNameCOPY, vector<string>& majorCOPY, vector<string>& GPA_COPY);
+void PrintMasterRecords(string method, vector<string> lastNameCOPY, vector<string> firstNameCOPY, vector<string> majorCOPY, vector<string> GPA_COPY);
 double GetAvgGPA(string method, array<string, NUMRECORDS>& lastNameCOPY, array<string, NUMRECORDS>& firstNameCOPY, array<string, NUMRECORDS>& majorCOPY, array<string, NUMRECORDS>& GPA_COPY);
+void sortVectors(std::vector<std::string>& mainVector, std::vector<std::string>& vector2, std::vector<std::string>& vector3, std::vector<std::string>& vector4);
 
 int main() {
     // Store File Names in String Objects
@@ -111,14 +122,12 @@ int main() {
         exit(1);
     }
 
-    // Store Data in Arrays
-    array<string, NUMRECORDS> firstName, lastName, major; // Student Data
-    array<string, NUMRECORDS> GPA{ 0 }; // NOTE: We only need GPA to be a double datatype when performing calculation
-    array<string, NUMMAJORS> dept, deptAbbr, majorName, majorAbbr, majorCode, division, school; // University Data
+    // Store Data in Vectors (memory allocated on the heap)
+    vector<string> firstName, lastName, major, GPA;
+    vector<string> dept, deptAbbr, majorName, majorAbbr, majorCode, division, school;
 
     // Copy Student Data for Processing
-    array<string, NUMRECORDS> firstNameCOPY, lastNameCOPY, majorCOPY;
-    array<string, NUMRECORDS> GPA_COPY{ 0 };
+    vector<string> firstNameCOPY, lastNameCOPY, majorCOPY, GPA_COPY;
 
     int menuChoice{ 0 };
     int subMenuChoice{ 0 };
@@ -134,21 +143,33 @@ int main() {
     int studentCount{ 0 }; // Keep track of number of records (in case of future changes)
     int majorCount{ 0 }; // Keep track of number of majors (in case of future changes)
     string whitespace; // Used to skip the whitespaces
-
-    // Read data from Student_Data File 
-    while (!studentDataFile.eof() && studentCount < NUMRECORDS) {
+    string word;
+    
+    // Read data from Student_Data File
+    while (!studentDataFile.eof()) {
         // Read the next line of the document into a string variable
         getline(studentDataFile, line);
         // Convert the entire next line of the text document into a stringstream object
         stringstream input(line);
 
-        // Populate Arrays
+        // Resize Vectors Before Storing New Data
+        lastName.resize(studentCount + 1);
+        firstName.resize(studentCount + 1);
+        major.resize(studentCount + 1);
+        GPA.resize(studentCount + 1);
+        lastNameCOPY.resize(studentCount + 1);
+        firstNameCOPY.resize(studentCount + 1);
+        majorCOPY.resize(studentCount + 1);
+        GPA_COPY.resize(studentCount + 1);
+
+        // Populate Vectors
         getline(input, lastName[studentCount], ',');
         getline(input, whitespace, ' '); // Removes space before firstName
         getline(input, firstName[studentCount], ',');
         getline(input, whitespace, ' '); // Removes space before major
         getline(input, major[studentCount], ',');
-        input >> GPA[studentCount];
+        getline(input, whitespace, ' '); // Removes space before GPA
+        getline(input, GPA[studentCount], ',');
 
         // Create a copy of the arrays for later use
         lastNameCOPY[studentCount] = lastName[studentCount];
@@ -165,6 +186,15 @@ int main() {
     while (!majorFile.eof() && majorCount < NUMMAJORS) {
         getline(majorFile, line);
         stringstream input(line);
+
+        // Resize Vectors Before Storing New Data
+        dept.resize(majorCount + 1);
+        deptAbbr.resize(majorCount + 1);
+        majorName.resize(majorCount + 1);
+        majorAbbr.resize(majorCount + 1);
+        majorCode.resize(majorCount + 1);
+        division.resize(majorCount + 1);
+        school.resize(majorCount + 1);
 
         // Populate Arrays
         getline(input, dept[majorCount], ';');
@@ -183,7 +213,7 @@ int main() {
 
         majorCount++;
     }
-
+    
     // Menu
     while (menuChoice != 3) {
         // Update User Selection
@@ -198,15 +228,15 @@ int main() {
             subMenuChoice = SubMenuSelection();
             switch (subMenuChoice) {
             case 1: // Alphabetical by Last Name
-                SortBy("Last Name", lastNameCOPY, firstNameCOPY, majorCOPY, GPA_COPY);
+                sortVectors(lastNameCOPY, firstNameCOPY, majorCOPY, GPA_COPY);
                 PrintMasterRecords("Last Name", lastNameCOPY, firstNameCOPY, majorCOPY, GPA_COPY);
                 break;
             case 2: // Alphabetical by Major
-                SortBy("Major", lastNameCOPY, firstNameCOPY, majorCOPY, GPA_COPY);
+                sortVectors(majorCOPY, lastNameCOPY, firstNameCOPY, GPA_COPY);
                 PrintMasterRecords("Major", lastNameCOPY, firstNameCOPY, majorCOPY, GPA_COPY);
                 break;
             case 3: // GPA (Highest to Lowest)
-                SortBy("GPA", lastNameCOPY, firstNameCOPY, majorCOPY, GPA_COPY);
+                sortVectors(GPA_COPY, majorCOPY, lastNameCOPY, firstNameCOPY);
                 PrintMasterRecords("GPA", lastNameCOPY, firstNameCOPY, majorCOPY, GPA_COPY);
                 break;
             }
@@ -216,9 +246,10 @@ int main() {
             break;
         }
     }
-
+    
     // Close Files
     studentDataFile.close();
+    majorFile.close();
 
     // Exit Prompt
     std::cout << "Terminating Program...\n";
@@ -275,7 +306,7 @@ int SubMenuSelection() {
     return selection;
 }
 
-void StudentLookup(int& index, array<string, NUMRECORDS> lastNameCOPY, array<string, NUMRECORDS> firstNameCOPY) {
+void StudentLookup(int& index, vector<string> lastNameCOPY, vector<string> firstNameCOPY) {
     string lname, fname;
     bool lastNameMatch{ false };
     bool firstNameMatch{ false };
@@ -309,96 +340,8 @@ void StudentLookup(int& index, array<string, NUMRECORDS> lastNameCOPY, array<str
     }
 }
 
-void MergeArrays(const std::array<std::string, NUMRECORDS>& srcArr1, const std::array<std::string, NUMRECORDS>& srcArr2,
-    const std::array<std::string, NUMRECORDS>& srcArr3, const std::array<std::string, NUMRECORDS>& srcArr4,
-    std::array<std::string, NUMRECORDS>& destArr1, std::array<std::string, NUMRECORDS>& destArr2,
-    std::array<std::string, NUMRECORDS>& destArr3, std::array<std::string, NUMRECORDS>& destArr4,
-    int low, int mid, int high) {
-    int leftSize = mid - low + 1;
-    int rightSize = high - mid;
-
-    // Copy data to temporary arrays
-    std::copy_n(srcArr1.begin() + low, leftSize, destArr1.begin() + low);
-    std::copy_n(srcArr2.begin() + low, leftSize, destArr2.begin() + low);
-    std::copy_n(srcArr3.begin() + low, leftSize, destArr3.begin() + low);
-    std::copy_n(srcArr4.begin() + low, leftSize, destArr4.begin() + low);
-
-    // Merge the temporary arrays back into the original arrays
-    int i = low, j = mid + 1, k = low;
-    while (i <= mid && j <= high) {
-        if (destArr1[i] <= srcArr1[j]) {
-            destArr1[k] = srcArr1[i];
-            destArr2[k] = srcArr2[i];
-            destArr3[k] = srcArr3[i];
-            destArr4[k] = srcArr4[i];
-            i++;
-        }
-        else {
-            destArr1[k] = srcArr1[j];
-            destArr2[k] = srcArr2[j];
-            destArr3[k] = srcArr3[j];
-            destArr4[k] = srcArr4[j];
-            j++;
-        }
-        k++;
-    }
-
-    // Copy the remaining elements from the left subarray, if any
-    while (i <= mid) {
-        destArr1[k] = srcArr1[i];
-        destArr2[k] = srcArr2[i];
-        destArr3[k] = srcArr3[i];
-        destArr4[k] = srcArr4[i];
-        i++;
-        k++;
-    }
-
-    // No need to copy the remaining elements from the right subarray,
-    // as they will already be in their correct positions in destArr
-}
-
-void MergeSortArrays(std::array<std::string, NUMRECORDS>& arr1, std::array<std::string, NUMRECORDS>& arr2,
-    std::array<std::string, NUMRECORDS>& arr3, std::array<std::string, NUMRECORDS>& arr4) {
-    std::array<std::string, NUMRECORDS> tempArr1, tempArr2, tempArr3, tempArr4;
-
-    // Copy the original arrays to temporary arrays
-    std::copy(arr1.begin(), arr1.end(), tempArr1.begin());
-    std::copy(arr2.begin(), arr2.end(), tempArr2.begin());
-    std::copy(arr3.begin(), arr3.end(), tempArr3.begin());
-    std::copy(arr4.begin(), arr4.end(), tempArr4.begin());
-
-    int currSize = 1;
-    int n = NUMRECORDS;
-    while (currSize < n) {
-        int low = 0;
-        while (low < n - 1) {
-            int mid = (low + currSize - 1) < (n - 1) ? (low + currSize - 1) : (n - 1);
-            int high = (low + 2 * currSize - 1) < (n - 1) ? (low + 2 * currSize - 1) : (n - 1);
-            MergeArrays(tempArr1, tempArr2, tempArr3, tempArr4, arr1, arr2, arr3, arr4, low, mid, high);
-            low += 2 * currSize;
-        }
-        currSize *= 2;
-    }
-}
-
-void SortBy(std::string method, std::array<std::string, NUMRECORDS>& lastNameCOPY,
-    std::array<std::string, NUMRECORDS>& firstNameCOPY, std::array<std::string, NUMRECORDS>& majorCOPY,
-    std::array<std::string, NUMRECORDS>& GPA_COPY) {
-
-    if (method == "Last Name") {
-        MergeSortArrays(lastNameCOPY, firstNameCOPY, majorCOPY, GPA_COPY);
-    }
-    else if (method == "Major") {
-        MergeSortArrays(majorCOPY, firstNameCOPY, lastNameCOPY, GPA_COPY);
-    }
-    else if (method == "GPA") {
-        // Convert GPA values to doubles and then sort accordingly
-    }
-}
-
-/*
 // Note: The time complexity of the bubble sort is O(n^2) making it very inefficient for processing large amounts of data
-void SortBy(string method, array<string, NUMRECORDS>& lastNameCOPY, array<string, NUMRECORDS>& firstNameCOPY, array<string, NUMRECORDS>& majorCOPY, array<string, NUMRECORDS>& GPA_COPY) {
+void SortBy(string method, vector<string>& lastNameCOPY, vector<string>& firstNameCOPY, vector<string>& majorCOPY, vector<string>& GPA_COPY) {
 
     // Sort By Last Name (Bubble)
     if (method == "Last Name") {
@@ -419,7 +362,7 @@ void SortBy(string method, array<string, NUMRECORDS>& lastNameCOPY, array<string
                     majorCOPY[j] = majorCOPY[j + 1];
                     majorCOPY[j + 1] = t;
                     // GPA
-                    double x = GPA_COPY[j];
+                    string x = GPA_COPY[j];
                     GPA_COPY[j] = GPA_COPY[j + 1];
                     GPA_COPY[j + 1] = x;
                 }
@@ -446,7 +389,7 @@ void SortBy(string method, array<string, NUMRECORDS>& lastNameCOPY, array<string
                     lastNameCOPY[j] = lastNameCOPY[j + 1];
                     lastNameCOPY[j + 1] = t;
                     // GPA
-                    double x = GPA_COPY[j];
+                    string x = GPA_COPY[j];
                     GPA_COPY[j] = GPA_COPY[j + 1];
                     GPA_COPY[j + 1] = x;
                 }
@@ -460,7 +403,7 @@ void SortBy(string method, array<string, NUMRECORDS>& lastNameCOPY, array<string
             for (int j{ 0 }; j < NUMRECORDS - 1; j++) {
                 if (GPA_COPY[j] < GPA_COPY[j + 1]) {
                     // Swap the elements in GPA array
-                    double temp = GPA_COPY[j];
+                    string temp = GPA_COPY[j];
                     GPA_COPY[j] = GPA_COPY[j + 1];
                     GPA_COPY[j + 1] = temp;
                     // Swap the elements in the other arrays as well
@@ -482,8 +425,6 @@ void SortBy(string method, array<string, NUMRECORDS>& lastNameCOPY, array<string
     }
 
 }
-*/
-
 
 void SetFileDestination(string& filePath) {
     int selection;
@@ -548,7 +489,7 @@ double GetAvgGPA(string method, array<string, NUMRECORDS>& lastNameCOPY, array<s
     }
 }
 
-void PrintStudentRecords(int index, array<string, NUMRECORDS>& lastNameCOPY, array<string, NUMRECORDS>& firstNameCOPY, array<string, NUMRECORDS>& majorCOPY, array<string, NUMRECORDS>& GPA_COPY) {
+void PrintStudentRecords(int index, vector<string>& lastNameCOPY, vector<string>& firstNameCOPY, vector<string>& majorCOPY, vector<string>& GPA_COPY) {
     string DocumentName;
 
     if (index == -999) {
@@ -596,7 +537,7 @@ void PrintStudentRecords(int index, array<string, NUMRECORDS>& lastNameCOPY, arr
 
 }
 
-void PrintMasterRecords(string method, array<string, NUMRECORDS> lastNameCOPY, array<string, NUMRECORDS> firstNameCOPY, array<string, NUMRECORDS> majorCOPY, array<string, NUMRECORDS> GPA_COPY) {
+void PrintMasterRecords(string method, vector<string> lastNameCOPY, vector<string> firstNameCOPY, vector<string> majorCOPY, vector<string> GPA_COPY) {
     string DocumentName;
 
     // Determine the filepath
@@ -642,4 +583,40 @@ void PrintMasterRecords(string method, array<string, NUMRECORDS> lastNameCOPY, a
 
     // Close Files
     OutFile.close();
+}
+
+void sortVectors(std::vector<std::string>& mainVector, std::vector<std::string>& vector2, std::vector<std::string>& vector3, std::vector<std::string>& vector4) {
+    // Create an index vector to keep track of the original positions
+    std::vector<int> index(mainVector.size());
+    for (int i = 0; i < index.size(); i++) {
+        index[i] = i;
+    }
+
+    // Sort the main vector while preserving the corresponding order in the index vector
+    std::sort(index.begin(), index.end(), [&](int a, int b) {
+        return mainVector[a] < mainVector[b];
+        });
+
+    // Rearrange the main vector based on the sorted index vector
+    std::vector<std::string> sortedVector(mainVector.size());
+    for (int i = 0; i < sortedVector.size(); i++) {
+        sortedVector[i] = mainVector[index[i]];
+    }
+
+    // Rearrange the other vectors based on the sorted index vector
+    std::vector<std::string> sortedVector2(vector2.size());
+    std::vector<std::string> sortedVector3(vector3.size());
+    std::vector<std::string> sortedVector4(vector4.size());
+
+    for (int i = 0; i < index.size(); i++) {
+        sortedVector2[i] = vector2[index[i]];
+        sortedVector3[i] = vector3[index[i]];
+        sortedVector4[i] = vector4[index[i]];
+    }
+
+    // Update the original vectors with the sorted values
+    mainVector = sortedVector;
+    vector2 = sortedVector2;
+    vector3 = sortedVector3;
+    vector4 = sortedVector4;
 }
