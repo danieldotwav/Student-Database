@@ -23,7 +23,8 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="Data.txt" />
+    <Text Include="Student_Data.txt" />
+    <Text Include="Undergraduate_Majors_and_Pre-Majors.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Student.h">

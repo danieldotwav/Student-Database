@@ -1,0 +1,154 @@
+Department Name; Abbreviation; Major Name; Abbreviation; Code; Division; School
+African American Studies; AF AMER; African American Studies BA; AFR AMER; 008V; SS; LS
+American Indian Studies; AM IND; American Indian Studies BA; AMER IND; 0030; SS; LS
+Anthropology; ANTHRO; Anthropology BA; ANTHRO; 0064; SS; LS
+Anthropology; ANTHRO; Anthropology BS; ANTH-BS; 0065; SS; LS
+Architecture and Urban Design; ARCH&UD; Architectural Studies BA; ARCH STD; 00A1; AA; AA
+Art; ART; Art BA; ART; 0090; AA; AA
+Art History; ART HIS; Art History BA; ART HIST; 0093; HU; LS
+Arts and Architecture-General; AA-GEN; Individual Field of Concentration BA; IND FLD; 0453; AA; AA
+Asian American Studies; ASIA AM; Asian American Studies BA; ASIA AM; 0100; SS; LS
+Asian Languages and Cultures; ASIA LC; Asian Humanities BA; ASIA HUM; 0442; HU; LS
+Asian Languages and Cultures; ASIA LC; Asian Languages and Linguistics BA; ASIAN LL; 00CW; HU; LS
+Asian Languages and Cultures; ASIA LC; Asian Religions BA; ASIA REL; 0443; HU; LS
+Asian Languages and Cultures; ASIA LC; Chinese BA; CHINESE; 0162; HU; LS
+Asian Languages and Cultures; ASIA LC; Japanese BA; JAPANESE; 0480; HU; LS
+Asian Languages and Cultures; ASIA LC; Korean BA; KOREAN; 0818; HU; LS
+Asian Languages and Cultures; ASIA LC; Southeast Asian Studies BA; SE ASIA; 0870; HU; LS
+Atmospheric and Oceanic Sciences; A&O SCI; Atmospheric and Oceanic Sciences BS; A&O SCIS; 002E; PS; LS
+Atmospheric and Oceanic Sciences; A&O SCI; Atmospheric and Oceanic Sciences/Mathematics BS; AOS/MATH; 00E3; PS; LS
+Atmospheric and Oceanic Sciences; A&O SCI; Atmospheric; Oceanic; and Environmental Sciences BS (pre-18W); AO&ES; 0589; PS; LS
+Atmospheric and Oceanic Sciences; A&O SCI; Climate Science BS; CLMT SCI; 00DQ; PS; LS
+Bioengineering; BIOENGR; Bioengineering BS; BIOENGR; 0288; EN; EN
+Chemical and Biomolecular Engineering; CHM&BE; Chemical Engineering BS; CHM ENGR; 0294; EN; EN
+Chemistry and Biochemistry; CHEM; Biochemistry BS; BIOCHEM; 0111; PS; LS
+Chemistry and Biochemistry; CHEM; Chemistry BS; CHEM; 0153; PS; LS
+Chemistry and Biochemistry; CHEM; Chemistry/Materials Science BS; CHEM-MAT; 0155; PS; LS
+Chemistry and Biochemistry; CHEM; General Chemistry BS; GEN CHEM; 0158; PS; LS
+Chicana and Chicano Studies (Pre-21W); CHICANO; Chicana and Chicano Studies BA; CHN STDS; 0626; SS; LS
+Chicana/o and Central American Studies; CCAS; Chicana and Chicano Studies BA; CHN STDS; 0626; SS; LS
+Civil and Environmental Engineering; C&EE; Civil Engineering BS; CIV ENGR; 0300; EN; EN
+Classics; CLASSIC; Classical Civilization BA; CLAS CIV; 0169; HU; LS
+Classics; CLASSIC; Greek BA; GREEK; 0414; HU; LS
+Classics; CLASSIC; Greek and Latin BA; GRK&LATN; 0625; HU; LS
+Classics; CLASSIC; Latin BA; LATIN; 0495; HU; LS
+Communication; COMM; Communication BA; COMM; 0183; SS; LS
+Communication; COMM ST; Communication Studies BA (Pre-19F); COM STDS; 0181; SS; LS
+Comparative Literature; COM LIT; Comparative Literature BA; COMP LIT; 0192; HU; LS
+Computational and Systems Biology; C&S BIO; Computational and Systems Biology BS; C&S BIO; 0299; LS
+Computer Science; COMP SCI; Computer Science and Engineering BS; CS&E; 0417; EN; EN
+Conservation Biology; CON BIO; Conservation Biology BS; CON BIOL; 0298; LS
+Dance; DANCE; Dance BA; DANCE; 0114; AA; AA
+Earth, Planetary, and Space Sciences; EPS SCI; Earth and Environmental Sciences BS; EARTHSS; 0278; PS; LS
+Earth, Planetary, and Space Sciences; EPS SCI; Geological Sciences BS; GEOG; 0365; PS; LS
+East Asian Languages and Cultures; E A STD; Chinese BA; CHINESE; 0162; HU; LS
+East Asian Languages and Cultures; E A STD; Japanese BA; JAPANESE; 0480; HU; LS
+East Asian Languages and Cultures; E A STD; Korean BA; KOREAN; 0818; HU; LS
+East Asian Languages and Cultures; E A STD; South and Southeast Asian Studies BA; SEASIA; 0870; HU; LS
+Ecology, Behavior, and Evolution; EEB; Ecology; Behavior; and Evolution BS; EEB; 0323; LS
+Economics; ECON; Business Economics BS; BUS ECON; 0021; SS; LS
+Economics; ECON; Economics BA; ECON; 0022; SS; LS
+Electrical and Computer Engineering; ELE ENGR; Electrical Engineering BS; EL ENGR; 0304; EN; EN
+English; ENG; English BA; ENGL; 0035; HU; LS
+Environmental Science; ENVIRON; Environmental Science BS; ENVIRON; 0285; LS; LS
+Ethnomusicology; ETHNMUS; Ethnomusicology BA; ETHNMUS; 0193; AA; AA
+European Studies; EUR ST; European Studies BA; EUR ST; 0136; SS; LS
+Film and Television; FILM TV; Film BA; FILM; 0125; AA; AA
+Film and Television; FILM TV; Television BA; TV; 0133; AA; AA
+French and Francophone Studies; FRNCH; French and Francophone Studies BA; FRNCH; 0186; HU; LS
+Gender Studies; GENDER; Gender Studies BA; GENDER; 0117; SS; LS
+Geography; GEOG; Geography BS; GEOG; 0365; SS; LS
+Geography/Environmental Studies; GEOG; Geography/Environmental Studies BA; GEOG/E S; 0367; SS; LS
+Geology; GEOL; Geology BS; GEOL; 0368; PS; LS
+German; GERMAN; German BA; GERMAN; 0185; HU; LS
+Global Studies; GLBL ST; Global Studies BA; GLBL ST; 0139; SS; LS
+Greek; GREEK; Greek BA; GREEK; 0414; HU; LS
+Hebrew; HEBREW; Hebrew BA; HEBREW; 0187; HU; LS
+History; HIST; History BA; HIST; 0040; SS; LS
+History; HIST; History of Science BA; HIST SCI; 0041; SS; LS
+Human Biology and Society; HUM BIOL; Human Biology and Society BS; HUM BIOL; 0060; LS
+International Development Studies; INTL DV; International Development Studies BA; INTL DV; 0137; SS; LS
+Italian; ITALIAN; Italian BA; ITALIAN; 0190; HU; LS
+Jewish Studies; JEWISH; Jewish Studies BA; JEWISH; 0141; HU; LS
+Korean; KOREAN; Korean BA; KOREAN; 0818; HU; LS
+Labor Studies; LABOR; Labor Studies BA; LABOR; 0126; SS; LS
+Latin; LATIN; Latin BA; LATIN; 0495; HU; LS
+Lesbian, Gay, Bisexual, and Transgender Studies; LGBT; Lesbian; Gay; Bisexual; and Transgender Studies BA; LGBT; 0140; SS; LS
+Linguistics; LING; Linguistics and Anthropology BA; LING&ANTH; 0142; SS; LS
+Linguistics; LING; Linguistics and Computer Science BA; LING&CS; 0143; SS; LS
+Linguistics; LING; Linguistics BA; LING; 0144; SS; LS
+Linguistics and Asian Languages and Cultures; LING; Linguistics and Asian Languages and Cultures BA; LING&ALC; 0145; SS; LS
+Linguistics and French and Francophone Studies; LING; Linguistics and French and Francophone Studies BA; LING&FRNCH; 0146; SS; LS
+Linguistics and Italian; LING; Linguistics and Italian BA; LING&ITAL; 0147; SS; LS
+Linguistics and Psychology; LING; Linguistics and Psychology BA; LING&PSYCH; 0148; SS; LS
+Linguistics and Scandinavian; LING; Linguistics and Scandinavian BA; LING&SCAN; 0149; SS; LS
+Linguistics and Spanish and Portuguese; LING; Linguistics and Spanish and Portuguese BA; LING&SP&PO; 0150; SS; LS
+Linguistics and Spanish; LING; Linguistics and Spanish BA; LING&SPAN; 0151; SS; LS
+Linguistics and Anthropology; LING; Linguistics/Anthropology BS; LING&ANTH; 0142; SS; LS
+Linguistics and Computer Science; LING; Linguistics/Computer Science BS; LING&CS; 0143; SS; LS
+Linguistics and Philosophy; LING; Linguistics/Philosophy BS; LING&PHIL; 0141; SS; LS
+Linguistics and Psychology; LING; Linguistics/Psychology BS; LING&PSYCH; 0148; SS; LS
+Linguistics and Scandinavian; LING; Linguistics/Scandinavian BS; LING&SCAN; 0149; SS; LS
+Linguistics and Spanish and Portuguese; LING; Linguistics/Spanish and Portuguese BS; LING&SP&PO; 0150; SS; LS
+Linguistics and Spanish; LING; Linguistics/Spanish BS; LING&SPAN; 0151; SS; LS
+Mathematics; MATH; Applied Mathematics BS; APPL MATH; 0045; PM; LS
+Mathematics; MATH; Mathematics of Computation BS; MATH COMP; 0046; PM; LS
+Mathematics; MATH; Mathematics/Applied Science BS; MATH/A S; 0284; PM; LS
+Mathematics; MATH; Mathematics BA; MATH; 0047; PM; LS
+Microbiology; IMMUNOL; Microbiology; Immunology; and Molecular Genetics BS; MIMG; 0308; LS; LS
+Middle Eastern Studies; MID EAST; Middle Eastern Studies BA; MID EAST; 0191; HU; LS
+Molecular, Cell, and Developmental Biology; MCDB; Molecular; Cell; and Developmental Biology BS; MCDB; 0315; LS; LS
+Music; MUSIC; Music BA; MUSIC; 0192; AA; AA
+Music Education; MUSIC ED; Music Education BA; MUSIC ED; 0182; AA; AA
+Music History; MUSIC HIS; Music History BA; MUSIC HIS; 0193; AA; AA
+Music Industry; MUSIC IND; Music Industry BA; MUSIC IND; 0195; AA; AA
+Music Performance; MUSIC PERFM; Music Performance BM; MUSIC PERFM; 0196; AA; AA
+Musicology; MUSC LGTC; Musicology BA; MUSICOL; 0194; AA; AA
+Neuroscience; NEUROSC; Neuroscience BS; NEUROSC; 0320; LS; LS
+Nursing; NURSING; Nursing BS; NURSING; 0455; EN; NURSING
+Philosophy; PHILOS; Philosophy BA; PHILOS; 0198; HU; LS
+Philosophy; PHILOS; Philosophy BS; PHILOS; 0199; HU; LS
+Physics; PHYSICS; Applied Physics BS; APPL PHYS; 0048; PS; LS
+Physics; PHYSICS; Astrophysics BS; ASTROPHYS; 0051; PS; LS
+Physics; PHYSICS; Physics BS; PHYSICS; 0049; PS; LS
+Physics; PHYSICS; Physics/Applied Science BS; PHYS/A S; 0200; PS; LS
+Physiological Science; PHYSIOL; Physiological Science BS; PHYSIOL; 0201; LS; LS
+Political Science; POL SCI; International Development Studies/Political Science BA; INTL DV/ POL SCI; 0328; SS; LS
+Political Science; POL SCI; Political Science BA; POL SCI; 0202; SS; LS
+Political Science; POL SCI; Political Science/Public Affairs BA; POL SCI/ PUB AFF; 0203; SS; LS
+Psychology; PSYCH; Psychology BA; PSYCH; 0204; SS; LS
+Psychology; PSYCH; Psychology BS; PSYCH; 0205; SS; LS
+Psychology; PSYCH; Psychology/Cognitive Science BA; PSYCH/COGS; 0206; SS; LS
+Psychology; PSYCH; Psychology/Economics BA; PSYCH/ECON; 0207; SS; LS
+Psychology; PSYCH; Psychology/Linguistics BA; PSYCH/LING; 0208; SS; LS
+Psychology; PSYCH; Psychology/Philosophy BA; PSYCH/PHILOS; 0209; SS; LS
+Psychology; PSYCH; Psychology/Sociology BA; PSYCH/SOCIOL; 0210; SS; LS
+Religious Studies; RELIGN; Buddhist Studies BA; BUDDHST; 0211; HU; LS
+Religious Studies; RELIGN; Comparative Religion BA; COMP REL; 0212; HU; LS
+Religious Studies; RELIGN; Hinduism BA; HINDI; 0213; HU; LS
+Religious Studies; RELIGN; Islamic Studies BA; ISLAMIC; 0214; HU; LS
+Religious Studies; RELIGN; Jewish Studies BA; JEWISH; 0215; HU; LS
+Religious Studies; RELIGN; Religion; Study of BA; RELIGN ST; 0216; HU; LS
+Scandinavian Section; SCAND; Scandinavian BA; SCAND; 0218; HU; LS
+Slavic; East European; and Eurasian Languages and Cultures; SEEEC; Russian Language and Literature BA; RUSSIAN; 0219; HU; LS
+Slavic; East European; and Eurasian Languages and Cultures; SEEEC; Slavic Languages and Literatures BA; SLAVC; 0220; HU; LS
+Sociology; SOC; Sociology BA; SOC; 0221; SS; LS
+Sociology; SOC; Sociology/Asian American Studies BA; SOC/ASIA AM; 0222; SS; LS
+Sociology; SOC; Sociology/Computational and Systems Biology BA; SOC/CS BIO; 0223; SS; LS
+Sociology; SOC; Sociology/International Development Studies BA; SOC/INTL DV; 0224; SS; LS
+Sociology; SOC; Sociology/Social Thought BA; SOC/SOC THG; 0225; SS; LS
+Spanish and Portuguese; SPAN; Portuguese BA; PORTUG; 0226; HU; LS
+Spanish and Portuguese; SPAN; Spanish BA; SPAN; 0227; HU; LS
+Spanish and Portuguese; SPAN; Spanish and Community and Culture BA; SPAN CC; 0400; HU; LS
+Spanish and Portuguese; SPAN; Spanish and Linguistics BA; SPAN LING; 0401; HU; LS
+Spanish and Portuguese; SPAN; Spanish and Linguistics BA; SPAN/LING; 0401; HU; LS
+Spanish and Portuguese; SPAN; Spanish and Portuguese BA; SPAN/PORT; 0402; HU; LS
+Spanish and Portuguese; SPAN; Spanish BA; SPANISH; 0227; HU; LS
+Spanish and Portuguese; SPAN; Spanish for Heritage Speakers BA; SPAN HRTG; 0403; HU; LS
+Statistics; STATS; Statistics BS; STATS; 0233; PM; LS
+Statistics; STATS; Statistics BS; STATISTICS; 0233; PM; LS
+Theater; THEATER; Theater BA; THEATER; 0235; AA; AA
+Theater; THEATER; Theater BA; THEATER; 0235; AA; AA
+Theater; THEATER; Theater/Digital Filmmaking BA; THEATER/FM; 0236; AA; AA
+Theater; THEATER; Theater/Performance Studies BA; THEATER/PERF; 0237; AA; AA
+World Arts and Cultures/Dance; WLD ART; World Arts and Cultures/Dance BA; WAC/DANCE; 0415; AA; AA

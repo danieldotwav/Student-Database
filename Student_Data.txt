@@ -1,0 +1,801 @@
+LastName, FirstName, Major, GPA,
+Smith, John, Mathematics, 3.75
+Johnson, Emily, Biology, 2.91
+Davis, Michael, Computer Science, 3.12
+Martinez, Sophia, Psychology, 3.59
+Brown, Olivia, English, 3.93
+Taylor, Liam, History, 3.25
+Anderson, Emma, Chemistry, 3.87
+Thomas, Noah, Physics, 3.45
+Garcia, Ava, Sociology, 2.76
+Hernandez, Isabella, Economics, 3.81
+Wilson, James, Political Science, 3.18
+Lewis, Mia, Fine Arts, 3.67
+Walker, Benjamin, Engineering, 3.92
+Hall, Charlotte, Nursing, 3.04
+Scott, Elijah, Business Administration, 3.26
+Green, Amelia, Computer Engineering, 3.79
+Adams, Daniel, Linguistics, 3.35
+Baker, Abigail, Anthropology, 2.93
+King, Alexander, Mathematics, 3.14
+Murphy, Harper, Biology, 3.89
+Powell, Samuel, Computer Science, 3.71
+Reed, Elizabeth, Psychology, 2.88
+Cooper, David, English, 3.45
+Long, Victoria, History, 3.98
+Rogers, Joseph, Chemistry, 3.63
+Sanders, Lily, Physics, 3.21
+Bell, Christopher, Sociology, 3.76
+Coleman, Andrew, Economics, 2.98
+Morris, Sofia, Political Science, 3.54
+Peterson, Max, Fine Arts, 3.87
+Rivera, Emily, Engineering, 3.09
+Collins, Ethan, Nursing, 3.32
+Kelly, Ava, Business Administration, 3.69
+Hayes, Michael, Computer Engineering, 3.95
+Bennett, Scarlett, Linguistics, 3.39
+Russell, James, Anthropology, 3.02
+Griffin, Evelyn, Mathematics, 3.56
+Murphy, William, Biology, 3.84
+Henderson, Aria, Computer Science, 3.17
+Anderson, Alexander, Psychology, 3.73
+Adams, Penelope, English, 2.99
+Martinez, Joseph, History, 3.23
+Moore, Victoria, Chemistry, 3.67
+Scott, Mateo, Physics, 3.45
+Walker, Zoe, Sociology, 3.78
+Cook, Harper, Economics, 3.11
+Perez, Aiden, Political Science, 3.49
+Jenkins, Scarlett, Fine Arts, 3.92
+Bennett, Isaac, Engineering, 3.04
+Sanders, Amelia, Nursing, 3.25
+Wright, Alexander, Business Administration, 3.79
+Coleman, Grace, Computer Engineering, 3.36
+Mitchell, Samuel, Linguistics, 3.09
+Hughes, Lillian, Anthropology, 2.85
+Parker, Daniel, Mathematics, 3.57
+James, Violet, Biology, 3.88
+Morris, Samuel, Computer Science, 3.31
+Collins, Zoey, Psychology, 3.72
+Hayes, Gabriel, English, 2.78
+Griffin, Lily, History, 3.25
+Young, Joseph, Chemistry, 3.66
+King, Leah, Physics, 3.43
+Turner, Gabriel, Sociology, 3.77
+Lewis, Grace, Economics, 3.22
+Thompson, Liam, Political Science, 3.46
+Peterson, Penelope, Fine Arts, 3.91
+Davis, Daniel, Engineering, 3.06
+Carter, Emma, Nursing, 3.29
+Powell, Alexander, Business Administration, 3.68
+Ward, Ava, Computer Engineering, 3.95
+Reed, Samuel, Linguistics, 3.37
+Roberts, Nora, Anthropology, 2.97
+Wright, Lucas, Mathematics, 3.54
+Perez, Harper, Biology, 3.86
+Parker, Olivia, Computer Science, 3.29
+Collins, Ethan, Psychology, 3.72
+Watson, Mia, English, 2.83
+Nelson, James, History, 3.34
+Hayes, Sofia, Chemistry, 3.63
+Adams, Noah, Physics, 3.39
+Bailey, Emily, Sociology, 3.79
+Rivera, William, Economics, 3.17
+Sanders, Isabella, Political Science, 3.52
+Torres, David, Fine Arts, 3.89
+Wilson, Scarlett, Engineering, 3.03
+Watson, Amelia, Nursing, 3.21
+Murphy, Benjamin, Business Administration, 3.68
+Johnson, Evelyn, Computer Engineering, 3.97
+Morgan, Ethan, Linguistics, 3.45
+Collins, Ava, Anthropology, 2.92
+Baker, Samuel, Mathematics, 3.51
+Parker, Mia, Biology, 3.85
+Peterson, Alexander, Computer Science, 3.27
+Thompson, Grace, Psychology, 3.69
+Mitchell, Noah, English, 2.76
+Jenkins, Lily, History, 3.34
+Nelson, Alexander, Chemistry, 3.67
+Moore, Violet, Physics, 3.37
+Carter, Emma, Sociology, 3.75
+Hayes, Lucas, Economics, 3.12
+Sanders, Sophia, Political Science, 3.56
+Turner, Daniel, Fine Arts, 3.88
+Russell, Leah, Engineering, 3.07
+Rivera, Amelia, Nursing, 3.19
+Bennett, Noah, Business Administration, 3.65
+Hughes, Emily, Computer Engineering, 3.96
+Collins, Michael, Linguistics, 3.42
+Adams, Olivia, Anthropology, 2.88
+Jenkins, Liam, Mathematics, 3.49
+Mitchell, Scarlett, Biology, 3.82
+Wright, Aiden, Computer Science, 3.23
+Nelson, Grace, Psychology, 3.68
+Walker, Isaac, English, 2.70
+Torres, Mia, History, 3.39
+Lewis, Michael, Chemistry, 3.66
+Hernandez, Lily, Physics, 3.32
+Watson, Daniel, Sociology, 3.72
+Parker, Abigail, Economics, 3.09
+Hall, Samuel, Political Science, 3.54
+Garcia, Scarlett, Fine Arts, 3.87
+Scott, Joseph, Engineering, 3.02
+Adams, Emma, Nursing, 3.16
+Hayes, Benjamin, Business Administration, 3.63
+Roberts, Harper, Computer Engineering, 3.92
+Collins, Daniel, Linguistics, 3.37
+Hernandez, Nora, Anthropology, 2.82
+Wright, Noah, Mathematics, 3.56
+Lewis, Grace, Biology, 3.84
+Martinez, Samuel, Computer Science, 3.18
+Thompson, Mia, Psychology, 3.71
+Mitchell, Alexander, English, 2.89
+Davis, Amelia, History, 3.25
+Turner, Gabriel, Chemistry, 3.67
+Bell, Sophia, Physics, 3.44
+Johnson, Daniel, Sociology, 3.78
+Walker, Mia, Economics, 3.13
+Adams, Benjamin, Political Science, 3.46
+Kelly, Isabella, Fine Arts, 3.90
+Martinez, Liam, Engineering, 3.05
+Bailey, Ava, Nursing, 3.22
+Wright, Alexander, Business Administration, 3.67
+Hayes, Grace, Computer Engineering, 3.96
+Morris, James, Linguistics, 3.43
+Hughes, Lily, Anthropology, 2.97
+Parker, Daniel, Mathematics, 3.53
+Scott, Olivia, Biology, 3.85
+Wilson, Lucas, Computer Science, 3.29
+Peterson, Emma, Psychology, 3.70
+Mitchell, Noah, English, 2.79
+Jenkins, Lily, History, 3.36
+Nelson, Alexander, Chemistry, 3.68
+Moore, Violet, Physics, 3.43
+Collins, Sophia, Sociology, 3.77
+Rivera, Benjamin, Economics, 3.11
+Sanders, Mia, Political Science, 3.54
+Turner, Samuel, Fine Arts, 3.88
+Baker, Amelia, Engineering, 3.02
+Perez, Noah, Nursing, 3.23
+Thompson, Aria, Business Administration, 3.66
+Reed, Michael, Computer Engineering, 3.92
+Powell, Emily, Linguistics, 3.41
+Green, Christopher, Anthropology, 2.96
+Adams, Penelope, Mathematics, 3.50
+Martinez, Harper, Biology, 3.83
+Collins, Liam, Computer Science, 3.27
+Watson, Mia, Psychology, 3.71
+Peterson, Noah, English, 2.78
+Turner, Lily, History, 3.33
+Mitchell, Gabriel, Chemistry, 3.67
+Hall, Abigail, Physics, 3.41
+Hernandez, Daniel, Sociology, 3.76
+Baker, Mia, Economics, 3.12
+Wilson, Alexander, Political Science, 3.48
+Hayes, Leah, Fine Arts, 3.89
+Walker, David, Engineering, 3.06
+Jenkins, Lily, Nursing, 3.21
+Moore, Benjamin, Business Administration, 3.65
+Adams, Scarlett, Computer Engineering, 3.95
+Collins, Ethan, Linguistics, 3.40
+Thompson, Ava, Anthropology, 2.87
+Baker, Samuel, Mathematics, 3.52
+Parker, Mia, Biology, 3.81
+Peterson, Alexander, Computer Science, 3.24
+Thompson, Grace, Psychology, 3.67
+Mitchell, Noah, English, 2.75
+Jenkins, Lily, History, 3.32
+Nelson, Alexander, Chemistry, 3.65
+Moore, Violet, Physics, 3.40
+Collins, Sophia, Sociology, 3.76
+Rivera, Benjamin, Economics, 3.10
+Sanders, Mia, Political Science, 3.53
+Turner, Samuel, Fine Arts, 3.87
+Baker, Amelia, Engineering, 3.01
+Perez, Noah, Nursing, 3.25
+Thompson, Aria, Business Administration, 3.63
+Reed, Michael, Computer Engineering, 3.91
+Powell, Emily, Linguistics, 3.39
+Green, Christopher, Anthropology, 2.95
+Adams, Penelope, Mathematics, 3.49
+Martinez, Harper, Biology, 3.82
+Collins, Liam, Computer Science, 3.26
+Watson, Mia, Psychology, 3.70
+Peterson, Noah, English, 2.77
+Turner, Lily, History, 3.31
+Mitchell, Gabriel, Chemistry, 3.66
+Hall, Abigail, Physics, 3.40
+Hernandez, Daniel, Sociology, 3.75
+Baker, Mia, Economics, 3.11
+Wilson, Alexander, Political Science, 3.47
+Hayes, Leah, Fine Arts, 3.88
+Walker, David, Engineering, 3.05
+Jenkins, Lily, Nursing, 3.20
+Moore, Benjamin, Business Administration, 3.64
+Adams, Scarlett, Computer Engineering, 3.94
+Collins, Ethan, Linguistics, 3.38
+Thompson, Ava, Anthropology, 2.86
+Baker, Samuel, Mathematics, 3.51
+Parker, Mia, Biology, 3.80
+Peterson, Alexander, Computer Science, 3.23
+Thompson, Grace, Psychology, 3.66
+Mitchell, Noah, English, 2.74
+Jenkins, Lily, History, 3.30
+Nelson, Alexander, Chemistry, 3.64
+Moore, Violet, Physics, 3.39
+Collins, Sophia, Sociology, 3.75
+Rivera, Benjamin, Economics, 3.10
+Sanders, Mia, Political Science, 3.52
+Turner, Samuel, Fine Arts, 3.86
+Baker, Amelia, Engineering, 3.00
+Perez, Noah, Nursing, 3.24
+Thompson, Aria, Business Administration, 3.63
+Reed, Michael, Computer Engineering, 3.90
+Powell, Emily, Linguistics, 3.39
+Green, Christopher, Anthropology, 2.94
+Adams, Penelope, Mathematics, 3.48
+Martinez, Harper, Biology, 3.81
+Collins, Liam, Computer Science, 3.25
+Watson, Mia, Psychology, 3.69
+Peterson, Noah, English, 2.76
+Turner, Lily, History, 3.30
+Mitchell, Gabriel, Chemistry, 3.66
+Hall, Abigail, Physics, 3.39
+Hernandez, Daniel, Sociology, 3.75
+Baker, Mia, Economics, 3.11
+Wilson, Alexander, Political Science, 3.46
+Hayes, Leah, Fine Arts, 3.88
+Walker, David, Engineering, 3.05
+Jenkins, Lily, Nursing, 3.19
+Moore, Benjamin, Business Administration, 3.63
+Adams, Scarlett, Computer Engineering, 3.93
+Collins, Ethan, Linguistics, 3.37
+Thompson, Ava, Anthropology, 2.85
+Baker, Samuel, Mathematics, 3.50
+Parker, Mia, Biology, 3.79
+Peterson, Alexander, Computer Science, 3.22
+Thompson, Grace, Psychology, 3.65
+Mitchell, Noah, English, 2.73
+Jenkins, Lily, History, 3.29
+Nelson, Alexander, Chemistry, 3.63
+Moore, Violet, Physics, 3.38
+Collins, Sophia, Sociology, 3.74
+Rivera, Benjamin, Economics, 3.09
+Sanders, Mia, Political Science, 3.51
+Turner, Samuel, Fine Arts, 3.85
+Baker, Amelia, Engineering, 2.99
+Perez, Noah, Nursing, 3.23
+Thompson, Aria, Business Administration, 3.62
+Reed, Michael, Computer Engineering, 3.89
+Powell, Emily, Linguistics, 3.38
+Green, Christopher, Anthropology, 2.93
+Adams, Penelope, Mathematics, 3.47
+Martinez, Harper, Biology, 3.80
+Collins, Liam, Computer Science, 3.24
+Watson, Mia, Psychology, 3.68
+Peterson, Noah, English, 2.75
+Turner, Lily, History, 3.29
+Mitchell, Gabriel, Chemistry, 3.65
+Hall, Abigail, Physics, 3.39
+Hernandez, Daniel, Sociology, 3.74
+Baker, Mia, Economics, 3.11
+Wilson, Alexander, Political Science, 3.45
+Hayes, Leah, Fine Arts, 3.87
+Walker, David, Engineering, 3.04
+Jenkins, Lily, Nursing, 3.18
+Moore, Benjamin, Business Administration, 3.62
+Adams, Scarlett, Computer Engineering, 3.92
+Collins, Ethan, Linguistics, 3.36
+Thompson, Ava, Anthropology, 2.84
+Baker, Samuel, Mathematics, 3.49
+Parker, Mia, Biology, 3.78
+Peterson, Alexander, Computer Science, 3.21
+Thompson, Grace, Psychology, 3.64
+Mitchell, Noah, English, 2.72
+Jenkins, Lily, History, 3.28
+Nelson, Alexander, Chemistry, 3.62
+Moore, Violet, Physics, 3.37
+Collins, Sophia, Sociology, 3.73
+Rivera, Benjamin, Economics, 3.08
+Sanders, Mia, Political Science, 3.50
+Turner, Samuel, Fine Arts, 3.85
+Johnson, Emma, Psychology, 3.59
+Williams, Noah, Computer Science, 3.81
+Smith, Ava, Nursing, 3.16
+Brown, Liam, Biology, 3.47
+Jones, Mia, Business Administration, 3.72
+Miller, Benjamin, Fine Arts, 3.88
+Davis, Sophia, Mathematics, 3.52
+Garcia, Alexander, History, 3.26
+Rodriguez, Penelope, Sociology, 3.63
+Wilson, Daniel, Engineering, 3.79
+Martinez, Amelia, Linguistics, 3.37
+Anderson, Michael, Political Science, 3.66
+Taylor, Scarlett, Economics, 3.45
+Thomas, David, Chemistry, 3.77
+Hernandez, Grace, English, 3.21
+Jackson, Samuel, Physics, 3.56
+Lopez, Harper, Anthropology, 3.68
+Lee, Alexander, Computer Engineering, 3.83
+Gonzalez, Mia, Psychology, 3.58
+Harris, Ethan, Sociology, 3.67
+Clark, Ava, Economics, 3.43
+Lewis, Liam, Business Administration, 3.76
+Young, Mia, Fine Arts, 3.87
+Walker, Noah, Computer Science, 3.80
+Hall, Amelia, Nursing, 3.15
+Allen, Daniel, Biology, 3.46
+Wright, Sophia, Mathematics, 3.51
+Scott, Benjamin, History, 3.25
+Torres, Penelope, Sociology, 3.62
+Nguyen, Alexander, Engineering, 3.78
+Hill, Amelia, Linguistics, 3.36
+Flores, Michael, Political Science, 3.65
+Green, Scarlett, Economics, 3.44
+Adams, David, Chemistry, 3.76
+Baker, Grace, English, 3.20
+Gonzalez, Samuel, Physics, 3.55
+Carter, Harper, Anthropology, 3.67
+Perez, Alexander, Computer Engineering, 3.82
+Collins, Mia, Psychology, 3.57
+Bell, Ethan, Sociology, 3.66
+Cruz, Ava, Economics, 3.42
+Edwards, Liam, Business Administration, 3.75
+Fisher, Mia, Fine Arts, 3.86
+Gray, Noah, Computer Science, 3.79
+Griffin, Amelia, Nursing, 3.14
+Hayes, Daniel, Biology, 3.45
+Hughes, Sophia, Mathematics, 3.50
+James, Benjamin, History, 3.24
+Jenkins, Penelope, Sociology, 3.61
+Kelly, Alexander, Engineering, 3.77
+King, Amelia, Linguistics, 3.35
+Lee, Michael, Political Science, 3.64
+Long, Scarlett, Economics, 3.43
+Morris, David, Chemistry, 3.75
+Murphy, Grace, English, 3.19
+Nelson, Samuel, Physics, 3.54
+Parker, Harper, Anthropology, 3.66
+Perez, Alexander, Computer Engineering, 3.81
+Phillips, Mia, Psychology, 3.56
+Powell, Ethan, Sociology, 3.65
+Price, Ava, Economics, 3.41
+Ramirez, Liam, Business Administration, 3.74
+Reed, Mia, Fine Arts, 3.85
+Rivera, Noah, Computer Science, 3.78
+Roberts, Amelia, Nursing, 3.13
+Rodriguez, Daniel, Biology, 3.44
+Rogers, Sophia, Mathematics, 3.49
+Ross, Benjamin, History, 3.23
+Russell, Penelope, Sociology, 3.60
+Sanchez, Alexander, Engineering, 3.76
+Sanders, Amelia, Linguistics, 3.34
+Scott, Michael, Political Science, 3.63
+Simmons, Scarlett, Economics, 3.42
+Stewart, David, Chemistry, 3.74
+Taylor, Grace, English, 3.18
+Thomas, Samuel, Physics, 3.53
+Thompson, Harper, Anthropology, 3.65
+Torres, Alexander, Computer Engineering, 3.80
+Turner, Mia, Psychology, 3.55
+Walker, Ethan, Sociology, 3.64
+Ward, Ava, Economics, 3.40
+Watson, Liam, Business Administration, 3.73
+White, Mia, Fine Arts, 3.84
+Williams, Noah, Computer Science, 3.77
+Wilson, Amelia, Nursing, 3.12
+Wood, Daniel, Biology, 3.43
+Wright, Sophia, Mathematics, 3.48
+Young, Benjamin, History, 3.22
+Anderson, Penelope, Sociology, 3.59
+Brown, Alexander, Engineering, 3.75
+Clark, Amelia, Linguistics, 3.33
+Davis, Michael, Political Science, 3.62
+Edwards, Scarlett, Economics, 3.41
+Garcia, David, Chemistry, 3.73
+Gonzalez, Grace, English, 3.17
+Hall, Samuel, Physics, 3.52
+Harris, Harper, Anthropology, 3.64
+Hernandez, Alexander, Computer Engineering, 3.79
+Hill, Mia, Psychology, 3.54
+Jackson, Ethan, Sociology, 3.63
+James, Ava, Economics, 3.39
+Johnson, Liam, Business Administration, 3.72
+Jones, Mia, Fine Arts, 3.83
+Kelly, Noah, Computer Science, 3.76
+King, Amelia, Nursing, 3.11
+Lee, Daniel, Biology, 3.42
+Lewis, Sophia, Mathematics, 3.47
+Long, Benjamin, History, 3.21
+Martinez, Penelope, Sociology, 3.58
+Miller, Alexander, Engineering, 3.74
+Moore, Amelia, Linguistics, 3.32
+Nelson, Michael, Political Science, 3.61
+Parker, Scarlett, Economics, 3.40
+Perez, David, Chemistry, 3.72
+Phillips, Grace, English, 3.16
+Powell, Samuel, Physics, 3.51
+Price, Harper, Anthropology, 3.63
+Ramirez, Alexander, Computer Engineering, 3.78
+Reed, Mia, Psychology, 3.53
+Richardson, Ethan, Sociology, 3.62
+Rivera, Ava, Economics, 3.38
+Roberts, Liam, Business Administration, 3.71
+Rodriguez, Mia, Fine Arts, 3.82
+Ross, Noah, Computer Science, 3.75
+Russell, Amelia, Nursing, 3.10
+Sanchez, Daniel, Biology, 3.41
+Scott, Sophia, Mathematics, 3.46
+Simmons, Benjamin, History, 3.20
+Smith, Penelope, Sociology, 3.57
+Stewart, Alexander, Engineering, 3.73
+Taylor, Ava, Linguistics, 3.31
+Thomas, Michael, Political Science, 3.60
+Thompson, Scarlett, Economics, 3.39
+Torres, David, Chemistry, 3.71
+Turner, Grace, English, 3.15
+Walker, Samuel, Physics, 3.50
+Ward, Harper, Anthropology, 3.62
+Watson, Alexander, Computer Engineering, 3.77
+White, Mia, Psychology, 3.52
+Williams, Ethan, Sociology, 3.61
+Wilson, Ava, Economics, 3.37
+Wood, Liam, Business Administration, 3.70
+Wright, Mia, Fine Arts, 3.81
+Young, Noah, Computer Science, 3.74
+Adams, Amelia, Nursing, 3.09
+Allen, Daniel, Biology, 3.40
+Anderson, Sophia, Mathematics, 3.45
+Baker, Benjamin, History, 3.19
+Bell, Penelope, Sociology, 3.56
+Brown, Alexander, Engineering, 3.72
+Carter, Ava, Linguistics, 3.30
+Clark, Michael, Political Science, 3.59
+Collins, Scarlett, Economics, 3.38
+Cruz, David, Chemistry, 3.70
+Davis, Grace, English, 3.14
+Edwards, Samuel, Physics, 3.49
+Fisher, Harper, Anthropology, 3.61
+Flores, Alexander, Computer Engineering, 3.76
+Garcia, Mia, Psychology, 3.51
+Gonzalez, Ethan, Sociology, 3.60
+Gray, Ava, Economics, 3.36
+Griffin, Liam, Business Administration, 3.69
+Harris, Mia, Fine Arts, 3.80
+Hayes, Noah, Computer Science, 3.73
+Hernandez, Amelia, Nursing, 3.08
+Hill, Daniel, Biology, 3.39
+Hughes, Sophia, Mathematics, 3.44
+Jackson, Benjamin, History, 3.18
+Jenkins, Penelope, Sociology, 3.55
+Johnson, Alexander, Engineering, 3.71
+Jones, Ava, Linguistics, 3.29
+Kelly, Michael, Political Science, 3.58
+King, Scarlett, Economics, 3.37
+Lee, David, Chemistry, 3.69
+Lewis, Grace, English, 3.13
+Long, Samuel, Physics, 3.48
+Martinez, Harper, Anthropology, 3.60
+Miller, Alexander, Computer Engineering, 3.75
+Moore, Mia, Psychology, 3.50
+Nelson, Ethan, Sociology, 3.59
+Parker, Ava, Economics, 3.35
+Perez, Liam, Business Administration, 3.68
+Phillips, Mia, Fine Arts, 3.79
+Powell, Noah, Computer Science, 3.72
+Price, Amelia, Nursing, 3.07
+Ramirez, Daniel, Biology, 3.38
+Reed, Sophia, Mathematics, 3.43
+Richardson, Benjamin, History, 3.17
+Rivera, Penelope, Sociology, 3.54
+Roberts, Alexander, Engineering, 3.70
+Rodriguez, Ava, Linguistics, 3.28
+Ross, Michael, Political Science, 3.57
+Russell, Scarlett, Economics, 3.36
+Sanchez, David, Chemistry, 3.68
+Scott, Grace, English, 3.12
+Simmons, Samuel, Physics, 3.47
+Smith, Harper, Anthropology, 3.59
+Stewart, Alexander, Computer Engineering, 3.74
+Taylor, Mia, Psychology, 3.49
+Thomas, Ethan, Sociology, 3.58
+Thompson, Ava, Economics, 3.34
+Torres, Noah, Business Administration, 3.67
+Turner, Mia, Fine Arts, 3.78
+Walker, Noah, Computer Science, 3.71
+Ward, Amelia, Nursing, 3.06
+Watson, Daniel, Biology, 3.37
+White, Sophia, Mathematics, 3.42
+Williams, Benjamin, History, 3.16
+Wilson, Penelope, Sociology, 3.53
+Wood, Alexander, Engineering, 3.69
+Wright, Mia, Linguistics, 3.27
+Young, Michael, Political Science, 3.56
+Adams, Scarlett, Economics, 3.35
+Allen, David, Chemistry, 3.67
+Anderson, Grace, English, 3.11
+Baker, Samuel, Physics, 3.46
+Bell, Harper, Anthropology, 3.58
+Brown, Alexander, Computer Engineering, 3.73
+Carter, Mia, Psychology, 3.48
+Clark, Ethan, Sociology, 3.57
+Collins, Ava, Economics, 3.33
+Cruz, Liam, Business Administration, 3.66
+Davis, Mia, Fine Arts, 3.77
+Edwards, Noah, Computer Science, 3.70
+Fisher, Amelia, Nursing, 3.05
+Flores, Daniel, Biology, 3.36
+Garcia, Sophia, Mathematics, 3.41
+Gonzalez, Benjamin, History, 3.15
+Gray, Penelope, Sociology, 3.52
+Griffin, Alexander, Engineering, 3.68
+Harris, Ava, Linguistics, 3.26
+Hayes, Michael, Political Science, 3.55
+Hernandez, Scarlett, Economics, 3.34
+Hill, David, Chemistry, 3.66
+Hughes, Grace, English, 3.10
+Jackson, Samuel, Physics, 3.45
+Jenkins, Harper, Anthropology, 3.57
+Johnson, Alexander, Computer Engineering, 3.72
+Jones, Mia, Psychology, 3.47
+Kelly, Ethan, Sociology, 3.56
+King, Ava, Economics, 3.32
+Lee, Liam, Business Administration, 3.65
+Lewis, Mia, Fine Arts, 3.76
+Long, Noah, Computer Science, 3.69
+Martinez, Amelia, Nursing, 3.04
+Miller, Daniel, Biology, 3.35
+Moore, Sophia, Mathematics, 3.40
+Nelson, Benjamin, History, 3.14
+Parker, Penelope, Sociology, 3.51
+Perez, Alexander, Engineering, 3.67
+Phillips, Ava, Linguistics, 3.25
+Powell, Michael, Political Science, 3.54
+Price, Scarlett, Economics, 3.33
+Ramirez, David, Chemistry, 3.65
+Reed, Grace, English, 3.09
+Richardson, Samuel, Physics, 3.44
+Rivera, Harper, Anthropology, 3.56
+Roberts, Alexander, Computer Engineering, 3.71
+Rodriguez, Mia, Psychology, 3.46
+Ross, Ethan, Sociology, 3.55
+Russell, Ava, Economics, 3.31
+Sanchez, Liam, Business Administration, 3.64
+Scott, Mia, Fine Arts, 3.75
+Simmons, Noah, Computer Science, 3.68
+Smith, Amelia, Nursing, 3.03
+Stewart, Daniel, Biology, 3.34
+Taylor, Sophia, Mathematics, 3.39
+Thomas, Benjamin, History, 3.13
+Thompson, Penelope, Sociology, 3.50
+Torres, Alexander, Engineering, 3.66
+Turner, Ava, Linguistics, 3.24
+Walker, Michael, Political Science, 3.53
+Ward, Scarlett, Economics, 3.32
+Watson, David, Chemistry, 3.64
+White, Grace, English, 3.08
+Williams, Samuel, Physics, 3.43
+Wilson, Harper, Anthropology, 3.55
+Wood, Alexander, Computer Engineering, 3.70
+Wright, Mia, Psychology, 3.45
+Young, Ethan, Sociology, 3.54
+Adams, Ava, Economics, 3.30
+Allen, Liam, Business Administration, 3.63
+Anderson, Mia, Fine Arts, 3.74
+Baker, Noah, Computer Science, 3.67
+Bell, Amelia, Nursing, 3.02
+Brown, Daniel, Biology, 3.33
+Carter, Sophia, Mathematics, 3.38
+Clark, Benjamin, History, 3.12
+Collins, Penelope, Sociology, 3.49
+Cruz, Alexander, Engineering, 3.65
+Davis, Ava, Linguistics, 3.23
+Edwards, Michael, Political Science, 3.52
+Fisher, Scarlett, Economics, 3.31
+Flores, David, Chemistry, 3.63
+Garcia, Grace, English, 3.07
+Gonzalez, Samuel, Physics, 3.42
+Gray, Harper, Anthropology, 3.54
+Griffin, Alexander, Computer Engineering, 3.69
+Harris, Mia, Psychology, 3.44
+Hayes, Ethan, Sociology, 3.53
+Hernandez, Ava, Economics, 3.29
+Hill, Liam, Business Administration, 3.62
+Hughes, Mia, Fine Arts, 3.73
+Jackson, Noah, Computer Science, 3.66
+Jenkins, Amelia, Nursing, 3.01
+Johnson, Daniel, Biology, 3.32
+Jones, Sophia, Mathematics, 3.37
+Kelly, Benjamin, History, 3.11
+King, Penelope, Sociology, 3.48
+Lee, Alexander, Engineering, 3.64
+Lewis, Ava, Linguistics, 3.22
+Long, Michael, Political Science, 3.51
+Martinez, Scarlett, Economics, 3.30
+Miller, David, Chemistry, 3.62
+Moore, Grace, English, 3.06
+Nelson, Samuel, Physics, 3.41
+Parker, Harper, Anthropology, 3.53
+Perez, Alexander, Computer Engineering, 3.68
+Phillips, Mia, Psychology, 3.43
+Powell, Ethan, Sociology, 3.52
+Price, Ava, Economics, 3.28
+Ramirez, Liam, Business Administration, 3.61
+Reed, Mia, Fine Arts, 3.72
+Richardson, Noah, Computer Science, 3.65
+Rivera, Amelia, Nursing, 3.00
+Roberts, Daniel, Biology, 3.31
+Rodriguez, Sophia, Mathematics, 3.36
+Ross, Benjamin, History, 3.10
+Russell, Penelope, Sociology, 3.47
+Sanchez, Alexander, Engineering, 3.63
+Scott, Amelia, Linguistics, 3.21
+Simmons, Michael, Political Science, 3.50
+Smith, Scarlett, Economics, 3.29
+Stewart, David, Chemistry, 3.61
+Taylor, Grace, English, 3.05
+Thomas, Samuel, Physics, 3.40
+Thompson, Harper, Anthropology, 3.52
+Torres, Alexander, Computer Engineering, 3.67
+Turner, Mia, Psychology, 3.42
+Walker, Ethan, Sociology, 3.51
+Ward, Ava, Economics, 3.27
+Watson, Liam, Business Administration, 3.60
+White, Mia, Fine Arts, 3.71
+Williams, Noah, Computer Science, 3.64
+Wilson, Amelia, Nursing, 2.99
+Wood, Daniel, Biology, 3.30
+Wright, Sophia, Mathematics, 3.35
+Young, Benjamin, History, 3.09
+Adams, Penelope, Sociology, 3.46
+Allen, Alexander, Engineering, 3.62
+Anderson, Ava, Linguistics, 3.20
+Baker, Michael, Political Science, 3.49
+Bell, Scarlett, Economics, 3.28
+Brown, David, Chemistry, 3.60
+Carter, Grace, English, 3.04
+Clark, Samuel, Physics, 3.39
+Collins, Harper, Anthropology, 3.51
+Cruz, Alexander, Computer Engineering, 3.66
+Davis, Mia, Psychology, 3.41
+Edwards, Ava, Sociology, 3.50
+Fisher, Liam, Economics, 3.26
+Flores, Michael, Business Administration, 3.59
+Garcia, Scarlett, Fine Arts, 3.70
+Gonzalez, Ethan, Computer Science, 3.63
+Gray, Alexander, Nursing, 2.98
+Griffin, Daniel, Biology, 3.29
+Harris, Sophia, Mathematics, 3.34
+Hayes, Benjamin, History, 3.08
+Hernandez, Penelope, Sociology, 3.45
+Hill, Alexander, Engineering, 3.61
+Hughes, Noah, Linguistics, 3.19
+Jackson, Mia, Political Science, 3.48
+Jenkins, Grace, Economics, 3.27
+Johnson, David, Chemistry, 3.59
+Jones, Liam, English, 3.03
+Kelly, Ava, Physics, 3.38
+King, Samuel, Anthropology, 3.50
+Lee, Alexander, Computer Engineering, 3.65
+Lewis, Mia, Psychology, 3.40
+Long, Ethan, Sociology, 3.49
+Martinez, Ava, Economics, 3.25
+Miller, Scarlett, Business Administration, 3.58
+Moore, David, Fine Arts, 3.69
+Nelson, Michael, Computer Science, 3.62
+Parker, Amelia, Nursing, 2.97
+Perez, Daniel, Biology, 3.28
+Phillips, Sophia, Mathematics, 3.33
+Powell, Benjamin, History, 3.07
+Price, Penelope, Sociology, 3.44
+Ramirez, Alexander, Engineering, 3.60
+Reed, Ava, Linguistics, 3.18
+Richardson, Michael, Political Science, 3.47
+Rivera, Scarlett, Economics, 3.26
+Roberts, David, Chemistry, 3.58
+Rodriguez, Grace, English, 3.02
+Ross, Mia, Physics, 3.37
+Russell, Harper, Anthropology, 3.49
+Sanchez, Alexander, Computer Engineering, 3.64
+Scott, Mia, Psychology, 3.39
+Smith, Noah, Sociology, 3.48
+Stewart, Ava, Economics, 3.24
+Taylor, Liam, Business Administration, 3.57
+Thomas, Michael, Fine Arts, 3.68
+Thompson, Noah, Computer Science, 3.61
+Torres, Amelia, Nursing, 2.96
+Turner, Daniel, Biology, 3.27
+Walker, Sophia, Mathematics, 3.32
+Ward, Benjamin, History, 3.06
+Watson, Penelope, Sociology, 3.43
+White, Alexander, Engineering, 3.59
+Williams, Ava, Linguistics, 3.17
+Wilson, Liam, Political Science, 3.46
+Wood, Grace, Economics, 3.25
+Wright, David, Chemistry, 3.57
+Young, Scarlett, English, 3.01
+Adams, Alexander, Physics, 3.36
+Allen, Mia, Anthropology, 3.48
+Anderson, Noah, Computer Engineering, 3.63
+Baker, Ava, Psychology, 3.38
+Bell, Liam, Sociology, 3.47
+Brown, Michael, Economics, 3.23
+Carter, Scarlett, Business Administration, 3.56
+Clark, David, Fine Arts, 3.67
+Collins, Grace, Computer Science, 3.60
+Cruz, Mia, Nursing, 2.95
+Davis, Alexander, Biology, 3.26
+Edwards, Ava, Mathematics, 3.31
+Fisher, Benjamin, History, 3.05
+Flores, Penelope, Sociology, 3.42
+Garcia, Alexander, Engineering, 3.58
+Gonzalez, Amelia, Linguistics, 3.16
+Gray, Daniel, Political Science, 3.45
+Griffin, Scarlett, Economics, 3.24
+Harris, David, Chemistry, 3.56
+Hayes, Grace, English, 3.00
+Hernandez, Noah, Physics, 3.35
+Hill, Mia, Anthropology, 3.47
+Hughes, Noah, Computer Engineering, 3.62
+Jackson, Sophia, Psychology, 3.37
+Jenkins, Liam, Sociology, 3.46
+Johnson, Michael, Economics, 3.22
+Jones, Ava, Business Administration, 3.55
+Kelly, Scarlett, Fine Arts, 3.66
+King, David, Computer Science, 3.59
+Lee, Alexander, Nursing, 2.94
+Lewis, Mia, Biology, 3.25
+Long, Ethan, Mathematics, 3.30
+Martinez, Michael, History, 3.04
+Miller, Ava, Sociology, 3.41
+Moore, Liam, Engineering, 3.57
+Nelson, Sophia, Linguistics, 3.15
+Parker, Daniel, Political Science, 3.44
+Perez, Grace, Economics, 3.23
+Phillips, David, Chemistry, 3.55
+Powell, Mia, English, 2.99
+Price, Noah, Physics, 3.34
+Ramirez, Scarlett, Anthropology, 3.46
+Reed, Alexander, Computer Engineering, 3.61
+Richardson, Ava, Psychology, 3.36
+Rivera, Liam, Sociology, 3.45
+Roberts, Michael, Economics, 3.21
+Rodriguez, Penelope, Business Administration, 3.54
+Ross, Sophia, Fine Arts, 3.65
+Russell, David, Computer Science, 3.58
+Sanchez, Mia, Nursing, 2.93
+Scott, Alexander, Biology, 3.24
+Simmons, Ava, Mathematics, 3.29
+Smith, Michael, History, 3.03
+Stewart, Scarlett, Sociology, 3.40
+Taylor, David, Engineering, 3.56
+Thomas, Grace, Linguistics, 3.14
+Thompson, Noah, Political Science, 3.43
+Torres, Amelia, Economics, 3.22
+Turner, Liam, Chemistry, 3.54
+Walker, Mia, English, 2.98
+Ward, Alexander, Physics, 3.33
+Watson, Benjamin, Anthropology, 3.45
+White, Michael, Computer Engineering, 3.60
+Williams, Ava, Psychology, 3.35
+Wilson, David, Sociology, 3.44
+Wood, Mia, Economics, 3.20
+Wright, Scarlett, Business Administration, 3.53
+Young, Noah, Fine Arts, 3.64
+Adams, Alexander, Computer Science, 3.57
+Allen, Mia, Nursing, 2.92
+Anderson, Daniel, Biology, 3.23
+Baker, Ava, Mathematics, 3.28
+Bell, Benjamin, History, 3.02
+Brown, Penelope, Sociology, 3.39
+Carter, Liam, Economics, 3.18
+Clark, Michael, Business Administration, 3.51
+Collins, Grace, Fine Arts, 3.62
+Cruz, David, Computer Engineering, 3.55
+Davis, Scarlett, Psychology, 3.30
+Edwards, Alexander, Sociology, 3.39
+Fisher, Ava, Chemistry, 3.51
+Flores, Michael, English, 2.97
+Garcia, Mia, Physics, 3.32
+Gonzalez, David, Anthropology, 3.44
+Gray, Scarlett, Computer Science, 3.56
