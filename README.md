@@ -1,9 +1,16 @@
 # Student-Database
 A console based application that parses data from a text file into individual arrays. The data is then able to be organized and output to a separate text document, alphabetically or by GPA (depending on what the user selects)
 
-  Latest Version Notes:
-  
-- Fixed a bug where the print by GPA feature was not printing correct data
-- Updated the sorting algorithm to display GPA in decreasing order -- TODO: will likely add the option to print GPA in ascending order
-- Separate documents are now generated for the entire registry (creates "Master_Records.txt) and the individual student (creates "LastName_FirstName_Records.txt") 
-- Fixed an issue where the user enters a valid last name and an invalid first name, and the program still returns the data of the student with a matching last name. It   now only creates a file if both the first name AND last name match.
+## **Features**
+- Find individual student records by last name and first name.
+- Print the entire student registry sorted alphabetically by last name, major, or GPA.
+- Save student records to a specified file destination.
+- Efficient sorting using merge sort algorithm.
+- Flexible file destination selection.
+- Error handling for invalid input.
+- Future plans include adding more advanced features like calculating average GPA, class ranking, and university ranking.
+
+## **How to Use**
+1. Run the program.
+2. Select menu options to perform desired operations.
+3. Follow on-screen instructions for additional input.
