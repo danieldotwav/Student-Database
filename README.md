@@ -36,6 +36,7 @@ A console based application that parses data from a text file into individual ar
   `1. Find Individual Student Records`: Use this option to search for a specific student's record by last name and first name.
   
   `2. Print Entire Student Registry`: Select this option to print the entire student registry with sorting options.
+  
   `3. Exit:` Choose this option to exit the program.
 
 #5. **Find Individual Student Records:**
@@ -48,7 +49,9 @@ A console based application that parses data from a text file into individual ar
   If you choose option 2, the program will present a sub-menu with sorting options:
 
   `1. Alphabetically by Last Name`: Sort and print the student registry by last name.
+  
   `2. Alphabetically by Major`: Sort and print the student registry by major.
+ 
   `3. GPA (Highest to Lowest)`: Sort and print the student registry by GPA.
   Select one of these sorting methods to print the student records accordingly.
 
@@ -57,7 +60,9 @@ A console based application that parses data from a text file into individual ar
   After sorting and printing, the program will ask you to select a file destination:
 
   `1. Print to 'Desktop'`: Save the records to your desktop.
+  
   `2. Print to 'Downloads'`: Save the records to your downloads folder.
+  
   `3. Print to 'Documents'`: Save the records to your documents folder.
   Choose the desired file destination, and the program will save the records in a text file with the appropriate format.
 
