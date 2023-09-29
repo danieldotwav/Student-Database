@@ -1,5 +1,5 @@
 # Student-Database
-A console based application that parses data from a text file into individual arrays. The data is then able to be organized and output to a separate text document, alphabetically or by GPA (depending on what the user selects)
+A C++ program for managing student records including names, majors, and GPAs. This program provides various features for data manipulation and sorting. It allows users to find individual student records, print the entire student registry, and sort the records by last name, major, or GPA. Additionally, it offers options to save the records to different file destinations, such as the desktop, downloads folder, or documents folder.
 
 ## **Features**
 - Find individual student records by last name and first name.
